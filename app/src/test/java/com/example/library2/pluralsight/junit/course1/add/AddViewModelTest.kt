@@ -50,7 +50,7 @@ class AddViewModelTest {
         val actual = model.save()
         assertEquals(expected, actual)
         //since we don't want to call the insert function of the repo. when to do doesn't have title, put never function
-        verify(repository, never()).insert(any())
+        verify(repository, never()).insert(any())//checks that the insert method is never called
     }
 
     @Test
