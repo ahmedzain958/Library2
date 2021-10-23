@@ -23,7 +23,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-//    kapt { generateStubs = true }
+    kapt { generateStubs = true }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -32,6 +32,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
         suppressWarnings = true
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+            returnDefaultValues = true
+
+        }
+
     }
 }
 
