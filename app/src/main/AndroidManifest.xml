@@ -10,13 +10,17 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".pluralsight.junit.course1.MainActivity"
+            android:name=".mvvm.view.MuseumActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".pluralsight.junit.course1.MainActivity"
+            android:exported="true">
         </activity>
     </application>
 
