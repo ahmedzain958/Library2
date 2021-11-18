@@ -16,4 +16,7 @@
     <string name="add">Add Todo</string>
 
     <string name="due_soon">Due Soon:</string>
+
+    <string name="empty_list">No museums found!</string>
+    <string name="an_error_occurred">An error occurred</string>
 </resources>

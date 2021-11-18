@@ -32,21 +32,27 @@ interface BaseInterface {
     val value: String
     fun f()
 }
-
+interface SecondInterface {
+    val value2: String
+    fun f2()
+}
 class ClassA: BaseInterface {
     override val value = "property from ClassA"
     override fun f() { println("fun from ClassA") }
 }
-
+open class ClassZ: SecondInterface {
+    override val value2 = "property from ClassB"
+    override fun f2() { println("fun from ClassB") }
+}
 // The ClassB can implement the BaseInterface by delegating all public
 // members from the ClassA.
-class ClassB(classA: BaseInterface): BaseInterface by classA {}
-
+class ClassB(classA: BaseInterface,classZ: ClassZ): BaseInterface by classA, ClassZ()//don't know why it wanted constructor invocation :D
 object SampleBy2 {
     @JvmStatic fun main(args: Array<String>) {
-        val classB = ClassB(ClassA())
+        val classB = ClassB(ClassA(),ClassZ())
         println(classB.value)
         classB.f()
+        classB.f2()
     }
 }
 ////////////////
