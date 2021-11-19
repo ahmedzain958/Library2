@@ -1,21 +1,25 @@
 package com.example.library2.mvvm.di
 
+import com.example.library2.mvvm.data.ApiClient
+import com.example.library2.mvvm.data.MuseumRemoteDataSource
+import com.example.library2.mvvm.model.MuseumDataSource
 import com.example.library2.mvvm.model.MuseumRepository
 import com.example.library2.mvvm.viewmodel.ViewModelFactory
 
 object Injection {
-    private var museumViewModelFactory :ViewModelFactory?=null
+    private var museumViewModelFactory: ViewModelFactory? = null
     private var museumRepository: MuseumRepository? = null
+    private var museumDataSource: MuseumDataSource? = null
 
 
-  /*  private fun createMuseumDataSource(): MuseumDataSource {
+    private fun createMuseumDataSource(): MuseumDataSource {
         val dataSource = MuseumRemoteDataSource(ApiClient)
         museumDataSource = dataSource
         return dataSource
-    }*/
+    }
 
     private fun createMuseumRepository(): MuseumRepository {
-        val repository = MuseumRepository(/*provideDataSource()*/)
+        val repository = MuseumRepository(provideDataSource())
         museumRepository = repository
         return repository
     }
@@ -28,10 +32,12 @@ object Injection {
 
     private fun providerRepository() = museumRepository ?: createMuseumRepository()
 
-    fun provideViewModelFactory() = museumViewModelFactory?:createFactory()
+    fun provideViewModelFactory() = museumViewModelFactory ?: createFactory()
+
+    fun provideDataSource() = museumDataSource ?: createMuseumDataSource()
 
     fun destroy() {
-//        museumDataSource = null
+        museumDataSource = null
         museumRepository = null
         museumViewModelFactory = null
     }
