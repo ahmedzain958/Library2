@@ -1,8 +1,8 @@
 package com.example.library2.mvvm.model
 
-import com.example.library2.mvvm.data.OperationCallback
+import com.example.library2.mvvm.data.OperationResult
 
 interface MuseumDataSource{
-    fun retrieveMuseums(callback: OperationCallback<Museum>)
-    fun cancel()
+    suspend fun retrieveMuseums(): OperationResult<Museum>
+
 }

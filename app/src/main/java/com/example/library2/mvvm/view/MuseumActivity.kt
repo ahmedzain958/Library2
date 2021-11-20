@@ -10,17 +10,18 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.library2.R
-import com.example.library2.mvvm.di.Injection
 import com.example.library2.mvvm.model.Museum
 import com.example.library2.mvvm.viewmodel.MuseumViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
-private const val TAG = "CONSOLE"
-
+@AndroidEntryPoint
 class MuseumActivity : AppCompatActivity() {
+    private  val TAG = "CONSOLE"
+    private val viewModel: MuseumViewModel by viewModels()
 
-    private val viewModel by viewModels<MuseumViewModel> {
+   /* private val viewModel by viewModels<MuseumViewModel> {
         Injection.provideViewModelFactory()
-    }
+    }*/
     private lateinit var adapter: MuseumAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var layoutError: View
@@ -86,6 +87,5 @@ class MuseumActivity : AppCompatActivity() {
     }
     override fun onDestroy() {
         super.onDestroy()
-        Injection.destroy()
     }
 }

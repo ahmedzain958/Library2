@@ -1,13 +1,19 @@
 package com.example.library2.mvvm.viewmodel
 
+import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.example.library2.mvvm.data.OperationCallback
+import androidx.lifecycle.viewModelScope
+import com.example.library2.mvvm.data.OperationResult
 import com.example.library2.mvvm.model.Museum
 import com.example.library2.mvvm.model.MuseumRepository
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class MuseumViewModel(private val repository: MuseumRepository) : ViewModel() {
+class MuseumViewModel @ViewModelInject constructor (private val repository: MuseumRepository) : ViewModel() {
 
     private val _museums = MutableLiveData<List<Museum>>().apply { value = emptyList() }
     val museums: LiveData<List<Museum>> = _museums
@@ -23,20 +29,23 @@ class MuseumViewModel(private val repository: MuseumRepository) : ViewModel() {
 
     fun loadMuseums() {
         _isLoading.value = true
-        repository.fetchMuseums(object : OperationCallback<Museum> {
-            override fun onSuccess(data: List<Museum>?) {
-                _isLoading.value = false
-                if (data.isNullOrEmpty())
-                    _isEmptyList.value = false
-                else
-                    _museums.value = data
+        viewModelScope.launch {
+            var  result:OperationResult<Museum> = withContext(Dispatchers.IO){
+                repository.retrieveMuseums()
             }
-
-            override fun onError(error: String?) {
-                _isLoading.value = false
-                _onMessageError.value = error
+            _isLoading.postValue(false)
+            when(result){
+                is OperationResult.Success ->{
+                    if(result.data.isNullOrEmpty()){
+                        _isEmptyList.postValue(true)
+                    }else{
+                        _museums.value = result.data
+                    }
+                }
+                is OperationResult.Error ->{
+                    _onMessageError.postValue(result.exception)
+                }
             }
-
-        })
+        }
     }
 }

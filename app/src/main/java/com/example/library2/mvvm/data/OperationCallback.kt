@@ -1,6 +1,6 @@
 package com.example.library2.mvvm.data
 
-interface OperationCallback<in T> {
-    fun onSuccess(data: List<T>?)
-    fun onError(error: String?)
+sealed class OperationResult<out T> {
+    data class Success<T>(val data: List<T>?) : OperationResult<T>()
+    data class Error(val exception:Exception?) : OperationResult<Nothing>()
 }
