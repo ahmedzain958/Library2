@@ -1,12 +1,12 @@
-package com.example.library2.mvvm.model
+package com.example.library2.mvvm.model1.model
 
-import com.example.library2.mvvm.data.ApiClient
-import com.example.library2.mvvm.data.OperationResult
+import com.example.library2.mvvm.model1.data.ApiClient
+import com.example.library2.mvvm.model1.data.OperationResult
 import java.lang.Exception
 import javax.inject.Inject
 
 
-class MuseumRepository @Inject constructor():MuseumDataSource {
+class MuseumRepository @Inject constructor(): MuseumDataSource {
     override suspend fun retrieveMuseums(): OperationResult<Museum> {
         try {
             val response = ApiClient.build()?.museums()

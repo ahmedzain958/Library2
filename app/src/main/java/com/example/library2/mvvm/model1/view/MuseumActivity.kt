@@ -1,4 +1,4 @@
-package com.example.library2.mvvm.view
+package com.example.library2.mvvm.model1.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,8 +10,8 @@ import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.library2.R
-import com.example.library2.mvvm.model.Museum
-import com.example.library2.mvvm.viewmodel.MuseumViewModel
+import com.example.library2.mvvm.model1.model.Museum
+import com.example.library2.mvvm.model1.viewmodel.MuseumViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

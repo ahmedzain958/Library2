@@ -1,4 +1,4 @@
-package com.example.library2.mvvm.model
+package com.example.library2.mvvm2.model
 
 import java.io.Serializable
 

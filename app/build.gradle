@@ -27,6 +27,9 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+    viewBinding {
+        enabled = true
+    }
     kapt { generateStubs = true }
 
     compileOptions {
@@ -95,6 +98,9 @@ dependencies {
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltAndroidXVersion"
     kapt "androidx.hilt:hilt-compiler:$hiltAndroidXVersion"
 
+  /*  implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.archLifecycleVersion"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.lifecycleKtxVersion"
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.viewmodelKtxVersion"*/
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
