@@ -1,5 +1,6 @@
 package com.example.library2.mvvm2.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -8,8 +9,10 @@ import com.example.library2.mvvm2.message.OperationResult
 import com.example.library2.mvvm2.model.Museum
 import com.example.library2.mvvm2.model.MuseumRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import java.time.LocalDateTime
 
 /**
  * @author Eduardo Medina
@@ -36,11 +39,11 @@ class MuseumViewModel(private val repository: MuseumRepository) : ViewModel() {
     fun loadMuseums() {
         _isViewLoading.postValue(true)
         viewModelScope.launch {
-            var result: OperationResult<Museum> = withContext(Dispatchers.IO) {
+            var result: OperationResult<Museum> = withContext(Dispatchers.IO) {//blocks the UI thread
                 repository.retrieveMuseums()
             }
             _isViewLoading.postValue(false)
-          /*  when (result) {
+            when (result) {
                 is OperationResult.Success -> {
                     if (result.data.isNullOrEmpty()) {
                         _isEmptyList.postValue(true)
@@ -51,7 +54,7 @@ class MuseumViewModel(private val repository: MuseumRepository) : ViewModel() {
                 is OperationResult.Error -> {
                     _onMessageError.postValue(result.exception)
                 }
-            }*/
+            }
         }
     }
 }

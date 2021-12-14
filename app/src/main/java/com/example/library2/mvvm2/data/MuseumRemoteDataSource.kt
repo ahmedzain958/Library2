@@ -1,8 +1,13 @@
 package com.example.library2.mvvm2.data
 
+import android.util.Log
 import com.example.library2.mvvm2.message.OperationResult
 import com.example.library2.mvvm2.model.Museum
 import com.example.library2.mvvm2.model.MuseumRepository
+import kotlinx.coroutines.delay
+import java.time.LocalDateTime
+import java.util.*
+import kotlin.math.log
 
 class MuseumRemoteDataSource : MuseumRepository {
 
@@ -20,6 +25,7 @@ class MuseumRemoteDataSource : MuseumRepository {
             } ?: run {
                 return OperationResult.Error(Exception("Ocurrió un error"))
             }
+
         } catch (e: Exception) {
             return OperationResult.Error(e)
         }

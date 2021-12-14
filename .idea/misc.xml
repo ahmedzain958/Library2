@@ -14,6 +14,8 @@
         <entry key="app/src/main/res/layout/activity_museum_view_binding_mvvm.xml" value="0.14114583333333333" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.31927083333333334" />
         <entry key="app/src/main/res/layout/layout_empty.xml" value="0.31927083333333334" />
+        <entry key="app/src/main/res/layout/layout_error.xml" value="0.31927083333333334" />
+        <entry key="app/src/main/res/layout/row_museum.xml" value="0.31927083333333334" />
         <entry key="app/src/main/res/layout/row_viewbindin_museum.xml" value="0.30520833333333336" />
       </map>
     </option>
