@@ -1,17 +1,16 @@
-package com.example.library2.mvvm.viewmodel
+package com.example.library2.emedinaa.mvvmhilt.viewmodel
 
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.library2.mvvm.data.OperationResult
-import com.example.library2.mvvm.model.Museum
-import com.example.library2.mvvm.model.MuseumRepository
+import com.example.library2.emedinaa.mvvmhilt.data.OperationResult
+import com.example.library2.emedinaa.mvvmhilt.model.Museum
+import com.example.library2.emedinaa.mvvmhilt.model.MuseumRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
 
 class MuseumViewModel @ViewModelInject constructor (private val repository: MuseumRepository) : ViewModel() {
 
@@ -30,7 +29,7 @@ class MuseumViewModel @ViewModelInject constructor (private val repository: Muse
     fun loadMuseums() {
         _isLoading.value = true
         viewModelScope.launch {
-            var  result:OperationResult<Museum> = withContext(Dispatchers.IO){
+            var  result: OperationResult<Museum> = withContext(Dispatchers.IO){
                 repository.retrieveMuseums()
             }
             _isLoading.postValue(false)

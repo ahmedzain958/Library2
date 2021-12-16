@@ -1,4 +1,4 @@
-package com.example.library2.mvvm.view
+package com.example.library2.emedinaa.mvvmhilt.view
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.library2.R
-import com.example.library2.mvvm.model.Museum
+import com.example.library2.emedinaa.mvvmhilt.model.Museum
 
 /**
  * @author Eduardo Medina

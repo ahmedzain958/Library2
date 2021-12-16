@@ -1,8 +1,8 @@
-package com.example.library2.mvvm.viewmodel
+package com.example.library2.emedinaa.mvvmhilt.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.library2.mvvm.model.MuseumRepository
+import com.example.library2.emedinaa.mvvmhilt.model.MuseumRepository
 
 /**
  * @author Eduardo Medina

@@ -1,4 +1,4 @@
-package com.example.library2.mvvm
+package com.example.library2.emedinaa.mvvmhilt
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
