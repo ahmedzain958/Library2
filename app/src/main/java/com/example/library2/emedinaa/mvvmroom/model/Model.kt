@@ -1,4 +1,4 @@
-package com.example.library2.emedinaa.mvvmhilt.model
+package com.example.library2.emedinaa.mvvmroom.model
 
 import java.io.Serializable
 
@@ -8,4 +8,4 @@ import java.io.Serializable
  * @see : https://developer.android.com/index.html
  */
 
-data class Museum(val id: Int, val name: String, val photo: String) : Serializable
+data class Museum(val id:Int, val name:String, val  photo:String):Serializable

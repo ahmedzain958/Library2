@@ -1,4 +1,4 @@
-package com.example.library2.emedinaa.mvvmhilt.data
+package com.example.library2.emedinaa.mvvmroom.data.remote
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -7,9 +7,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.GET
 
-/**
- * @author : Eduardo Medina
- */
 object ApiClient {
 
     //https://obscure-earth-55790.herokuapp.com/api/museums
