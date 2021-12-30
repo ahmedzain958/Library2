@@ -107,7 +107,7 @@ class GroceryListActivity : AppCompatActivity(), NewItemDialogFragment.NewItemDi
             viewModel.updateItem(position!!, item)
             binding.rvGroceryList.adapter?.notifyDataSetChanged()
         }
-        binding.totalAmount = String.format("%.2f", viewModel.getTotal())
+        binding.totalAmount = String.format("%.2f", viewModel.getTotal())//formats it to display up to two decimal points.
         Snackbar.make(binding.addItemButton, "Item Added Successfully", Snackbar.LENGTH_LONG).setAction("Action", null).show()
     }
 
