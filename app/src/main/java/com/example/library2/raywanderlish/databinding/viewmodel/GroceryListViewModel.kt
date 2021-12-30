@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Razeware LLC
+ * Copyright (c) 2020 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -19,10 +19,6 @@
  * merger, publication, distribution, sublicensing, creation of derivative works,
  * or sale is expressly withheld.
  *
- * This project and source code may use libraries or frameworks that are
- * released under various Open-Source licenses. Use of those libraries and
- * frameworks are governed by their own individual licenses.
- *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -32,9 +28,22 @@
  * THE SOFTWARE.
  */
 
-package com.example.library2.raywanderlish.model
+package com.example.library2.raywanderlish.databinding.viewmodel
 
-/** Types of sessions/classes the user can enroll in at the gym. */
-enum class Session {
-  MORNING, NOON, EVENING, NIGHT
+import androidx.lifecycle.ViewModel
+import com.example.library2.raywanderlish.databinding.model.GroceryItem
+
+class GroceryListViewModel : ViewModel() {
+  //items will retain as long the activity is active
+  var groceryListItems: ArrayList<GroceryItem> = ArrayList()
+
+  fun getTotal(): Double = groceryListItems.map { it.finalPrice }.sum()
+
+  fun removeItem(position: Int) {
+    groceryListItems.removeAt(position)
+  }
+
+  fun updateItem(position: Int, updatedItem: GroceryItem) {
+    groceryListItems[position] = updatedItem
+  }
 }

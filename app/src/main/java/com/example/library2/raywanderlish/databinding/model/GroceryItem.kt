@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2021 Razeware LLC
+ * Copyright (c) 2019 Razeware LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -19,10 +19,6 @@
  * merger, publication, distribution, sublicensing, creation of derivative works,
  * or sale is expressly withheld.
  *
- * This project and source code may use libraries or frameworks that are
- * released under various Open-Source licenses. Use of those libraries and
- * frameworks are governed by their own individual licenses.
- *
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -32,24 +28,11 @@
  * THE SOFTWARE.
  */
 
-package com.example.library2.raywanderlish.model
+package com.example.library2.raywanderlish.databinding.model
 
-import androidx.databinding.BaseObservable
-import androidx.databinding.Bindable
-//import com.example.library2.databindingobservables.BR
-/** A model that wraps the phone number's 2 parts. */
-class PhoneNumber :BaseObservable(){
-
-@get:Bindable
-var areaCode: String = ""
-  set(value) {
-    field=value
-//    notifyPropertyChanged(BR.areaCode)
-  }
-  @get:Bindable
-  var number: String = ""
-  set(setterValue) {
-    field = setterValue
-//    notifyPropertyChanged(BR.number)
-  }
-}
+data class GroceryItem(
+    var itemName: String = "",
+    var price: Double = 0.0,
+    var amount: Int = 0,
+    var finalPrice: Double = 0.0
+)
