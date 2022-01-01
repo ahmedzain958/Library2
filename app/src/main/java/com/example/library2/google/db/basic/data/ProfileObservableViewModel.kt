@@ -26,7 +26,7 @@ import androidx.lifecycle.ViewModel
 import com.example.library2.BR
 import com.example.library2.google.db.basic.util.ObservableViewModel
 
-
+//https://github.com/android/databinding-samples/tree/master/BasicSample
 /**
  * This class is used as a variable in the XML layout and it's fully observable, meaning that
  * changes to any of the exposed observables automatically refresh the UI. *
@@ -80,6 +80,8 @@ class ProfileObservableViewModel : ObservableViewModel() {
             else -> Popularity.NORMAL
             }
             }
+            In this example, when onLike is called, the number of likes is incremented and the popularity property is notified of a potential change (popularity depends on likes).
+            getPopularity is called by the library, returning a possible new value.
          */
     }
 
