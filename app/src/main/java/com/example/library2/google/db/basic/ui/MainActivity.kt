@@ -34,7 +34,7 @@ class MainActivity : AppCompatActivity() {
         // The layout for this activity is a Data Binding layout so it needs to be inflated using
         // DataBindingUtil.
         val binding: ActivityMainGoogleBasicDbBinding = DataBindingUtil.setContentView(
-                this, R.layout.activity_main)
+                this, R.layout.activity_main_google_basic_db)
 
         // The returned binding has references to all the Views with an ID.
         binding.observableFieldsActivityButton.setOnClickListener {

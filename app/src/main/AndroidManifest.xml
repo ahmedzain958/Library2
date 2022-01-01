@@ -21,7 +21,11 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".pluralsight.junit.course1.MainActivity"
+            android:name=".google.db.basic.ui.ViewModelActivity"
+            android:exported="true">
+        </activity>
+ <activity
+            android:name=".google.db.basic.ui.ObservableFieldActivity"
             android:exported="true">
         </activity>
     </application>

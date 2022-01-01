@@ -26,7 +26,7 @@ import com.example.library2.databinding.ObservableFieldProfileBinding
 import com.example.library2.google.db.basic.data.ObservableFieldProfile
 
 /**
- * This activity shows shows static data and lets the user increment the
+ * This activity shows static data and lets the user increment the
  * number of likes by clicking a button. See [ViewModelActivity] for a better implementation.
  */
 class ObservableFieldActivity : AppCompatActivity() {
