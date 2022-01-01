@@ -48,6 +48,9 @@ android {
     configurations.all {
         resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
     }
+    buildFeatures{
+        dataBinding true
+    }
 }
 
 dependencies {
