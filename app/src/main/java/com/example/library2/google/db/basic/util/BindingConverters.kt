@@ -18,7 +18,7 @@ package com.example.library2.google.db.basic.util
 
 import androidx.databinding.BindingConversion
 import android.view.View
-
+//https://github.com/android/databinding-samples/tree/master/BasicSample#binding-converters-use-with-caution
 /**
  * In order to show a View only when it has more than 0 likes, we pass this expression to its
  * visibilty property:
