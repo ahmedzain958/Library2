@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.24166666666666667" />
         <entry key="..\:/Users/ZainElDinA/StudioProjects/Library2/app/src/main/res/drawable/ic_add_black_24dp.xml" value="0.1" />
         <entry key="..\:/Users/ZainElDinA/StudioProjects/Library2/app/src/main/res/layout/activity_add.xml" value="0.26145833333333335" />
         <entry key="..\:/Users/ZainElDinA/StudioProjects/Library2/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -11,7 +12,10 @@
         <entry key="app/src/main/res/drawable-v24/ic_error.xml" value="0.33541666666666664" />
         <entry key="app/src/main/res/layout/activity_museum.xml" value="0.25" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.31927083333333334" />
+        <entry key="app/src/main/res/layout/interval_timer.xml" value="0.25" />
         <entry key="app/src/main/res/layout/layout_empty.xml" value="0.31927083333333334" />
+        <entry key="app/src/main/res/layout/observable_field_profile.xml" value="0.2703125" />
+        <entry key="app/src/main/res/layout/viewmodel_profile.xml" value="0.1925925925925926" />
       </map>
     </option>
   </component>
