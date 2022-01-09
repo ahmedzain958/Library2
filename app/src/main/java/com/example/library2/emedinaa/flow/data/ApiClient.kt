@@ -1,4 +1,4 @@
-package com.example.library2.emedinaa.mvvmhilt.data
+package com.example.library2.emedinaa.flow.data
 
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
