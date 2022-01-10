@@ -5,3 +5,10 @@ public class Tray {
     }
     public void remove(Glass<? super CokeZero> colaGlass){}//any supertype of CokeZero
 }
+/**
+ * lower bound  [CokeExtra] < [CokeZero] < [CokeDiet] < [Coke] upper bound
+ *
+ * supers of [CokeExtra]
+ * extenders of  [Coke]
+ */
+

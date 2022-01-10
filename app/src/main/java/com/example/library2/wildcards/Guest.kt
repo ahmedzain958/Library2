@@ -9,6 +9,7 @@ fun main() {
     t.remove(Glass<CokeZero>())
     t.remove(Glass<Coke>())
     t.remove(Glass<CokeDiet>())
+    //t.remove(Glass<CokeGreen>()) compile time error
     /*
     t.remove(Glass<Juice>())
     Type mismatch.
@@ -17,6 +18,7 @@ fun main() {
      */
 
 }
+
 /*
 compile Time vs Runtime
 Kotlin is a compiled language, meaning that your program is translated into machine-language instructions prior to execution by a special program, called the compiler. During this step, the compiler ensures that certain requirements are met by your code before the instructions are generated.
