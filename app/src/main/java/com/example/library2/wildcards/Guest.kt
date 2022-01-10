@@ -3,12 +3,13 @@ package com.example.library2.wildcards
 //https://www.youtube.com/watch?v=1Omf1Vba44Y
 fun main() {
     val t = Tray()
-    t.add(Glass<Any>())// any type could be as a type argument
-    t.add(Glass<String>())
+    t.add(Glass<OrangeJuice>())
+    t.add(Glass<Juice>())
+    t.add(Glass())//without mentioning it will take the default
 
 }
 /*
-ompile Time vs Runtime
+compile Time vs Runtime
 Kotlin is a compiled language, meaning that your program is translated into machine-language instructions prior to execution by a special program, called the compiler. During this step, the compiler ensures that certain requirements are met by your code before the instructions are generated.
 
 For example, the compiler checks whether null is assigned to a nullable type. As you have seen, if you attempt to assign null to a non-nullable type, Kotlin will refuse to compile your program.
