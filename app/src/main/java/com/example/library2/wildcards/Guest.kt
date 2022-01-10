@@ -6,6 +6,15 @@ fun main() {
     t.add(Glass<OrangeJuice>())
     t.add(Glass<Juice>())
     t.add(Glass())//without mentioning it will take the default
+    t.remove(Glass<CokeZero>())
+    t.remove(Glass<Coke>())
+    t.remove(Glass<CokeDiet>())
+    /*
+    t.remove(Glass<Juice>())
+    Type mismatch.
+    Required:Glass<in CokeZero!>!
+    Found:Glass<Juice>
+     */
 
 }
 /*
