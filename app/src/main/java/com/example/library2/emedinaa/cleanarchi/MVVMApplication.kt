@@ -1,4 +1,4 @@
-package com.example.library2.emedinaa.mvvmhilt
+package com.example.library2.emedinaa.cleanarchi
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
