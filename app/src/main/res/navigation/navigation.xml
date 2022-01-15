@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/museumsFragment">
+
+    <fragment
+        android:id="@+id/museumsFragment"
+        android:name="com.example.library2.emedinaa.cleanarchi.presentation.view.MuseumsFragment"
+        android:label="fragment_museums"
+        tools:layout="@layout/fragment_museums" >
+        <action
+            android:id="@+id/action_museumsFragment_to_museumDetailFragment"
+            app:destination="@id/museumDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/museumDetailFragment"
+        android:name="com.example.library2.emedinaa.cleanarchi.presentation.view.MuseumDetailFragment"
+        android:label="fragment_museum_detail"
+        tools:layout="@layout/fragment_museum_detail">
+
+    </fragment>
+</navigation>

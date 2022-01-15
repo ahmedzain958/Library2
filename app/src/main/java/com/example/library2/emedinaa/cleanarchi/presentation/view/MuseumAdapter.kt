@@ -14,36 +14,38 @@ import kotlinx.android.synthetic.main.row_museum.view.*
 /**
  * @author Eduardo Medina
  */
-class MuseumAdapter(private var museums: List<Museum>) :
+class MuseumAdapter(
+    private var museums: List<Museum>,
+    private val itemAction: (museum: Museum) -> Unit
+) :
     RecyclerView.Adapter<MuseumAdapter.MViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, p1: Int): MViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.row_museum, parent, false)
         return MViewHolder(view)
     }
 
-    override fun onBindViewHolder(vh: MViewHolder, position: Int) {
-        //render
-        vh.bind(museums[position])
+    override fun onBindViewHolder(viewHolder: MViewHolder, position: Int) {
+        viewHolder.bind(museums[position])
     }
 
-    override fun getItemCount(): Int {
-        return museums.size
-    }
+    override fun getItemCount(): Int = museums.size
 
     fun update(data: List<Museum>) {
         museums = data
         notifyDataSetChanged()
     }
 
-    class MViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-        private val textViewName: TextView = view.textViewName
-        private val imageView: ImageView = view.imageView
-
+    inner class MViewHolder(private val view: View) : RecyclerView.ViewHolder(view) {
+        private val textViewName: TextView = view.findViewById(R.id.textViewName)
+        private val imageView: ImageView = view.findViewById(R.id.imageView)
         fun bind(museum: Museum) {
-            textViewName.text = museum.name.capitalize()
+            textViewName.text = museum.name
             Glide.with(imageView.context).load(museum.photo).into(imageView)
+            view.setOnClickListener {
+                itemAction(museum)
+            }
         }
     }
 }
