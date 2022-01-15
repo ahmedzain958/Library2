@@ -9,14 +9,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.library2.R
 import com.example.library2.emedinaa.cleanarchi.domain.Museum
-import kotlinx.android.synthetic.main.row_museum.view.*
 
 /**
  * @author Eduardo Medina
  */
+interface Play {
+    fun printRorL(textview:TextView)
+    fun directTO(museum: Museum)
+}
+
 class MuseumAdapter(
     private var museums: List<Museum>,
-    private val itemAction: (museum: Museum) -> Unit
+    private val play: Play
 ) :
     RecyclerView.Adapter<MuseumAdapter.MViewHolder>() {
 
@@ -44,7 +48,8 @@ class MuseumAdapter(
             textViewName.text = museum.name
             Glide.with(imageView.context).load(museum.photo).into(imageView)
             view.setOnClickListener {
-                itemAction(museum)
+//                play.directTO(museum)
+                play.printRorL(textViewName)
             }
         }
     }

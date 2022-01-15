@@ -3,12 +3,11 @@ package com.example.library2.emedinaa.cleanarchi.presentation.view
 import android.content.ContentValues.TAG
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import androidx.activity.viewModels
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -17,6 +16,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.library2.R
 import com.example.library2.emedinaa.cleanarchi.domain.Museum
 import com.example.library2.emedinaa.cleanarchi.presentation.viewmodel.MuseumViewModel
+import dagger.hilt.EntryPoint
+import dagger.hilt.android.AndroidEntryPoint
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -28,6 +29,7 @@ private const val ARG_PARAM2 = "param2"
  * Use the [MuseumsFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
+@AndroidEntryPoint
 class MuseumsFragment : Fragment() {
     private lateinit var adapter: MuseumAdapter
     private lateinit var recyclerView: RecyclerView
@@ -50,10 +52,16 @@ class MuseumsFragment : Fragment() {
         layoutEmpty = view.findViewById(R.id.layoutEmpty)
         progressBar = view.findViewById(R.id.progressBar)
         textViewError = view.findViewById(R.id.textViewError)
+        val myPlay = object : Play {
+            override fun printRorL(textView: TextView) {
+                textView.text = "Right"
+            }
 
-        adapter = MuseumAdapter(viewModel.museums.value ?: emptyList()) {
-            goToMuseumDetailView(it)
+            override fun directTO(museum: Museum) {
+                goToMuseumDetailView(museum)
+            }
         }
+        adapter = MuseumAdapter(viewModel.museums.value ?: emptyList(), myPlay)
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
         recyclerView.adapter = adapter
     }
