@@ -1,0 +1,12 @@
+package com.example.library2.dependencyinversion.solution;
+
+import java.io.File;
+import java.util.List;
+
+public class ExportHTML implements IExportData{
+    public File exportData(List<Object[]> listData){
+        File outputHTML = null;
+        //Logic to iterate the listData and generate HTML File
+        return outputHTML;
+    }
+}
