@@ -1,0 +1,104 @@
+
+read https://learning.oreilly.com/library/view/java-9-dependency/9781788296250/8330bd56-eadb-406b-82d3-2b194279ec21.xhtml
+In this case, the balance sheet module is a high-level module, and fetch database and export HTML are low-level modules.
+
+The code of the FetchDatabase module should look something like the following snippet:
+
+public class FetchDatabase {
+    public List<Object[]> fetchDataFromDatabase(){
+         List<Object[]> dataFromDB = new ArrayList<Object[]>();
+         //Logic to call database, execute a query and fetch the data
+         return dataFromDB;
+     }
+}
+The ExportHTML module will take the list of data and export it into HTML file format. The code should look as follows:
+
+public class ExportHTML {
+    public File exportToHTML(List<Object[]> dataLst){
+        File outputHTML = null;
+        //Logic to iterate the dataLst and generate HTML file.
+        return outputHTML;
+     }
+}
+The code for our parent module—the BalanceSheet module that takes the data from the fetch database module and sends to the export HTML module—should look as follows:
+
+public class BalanceSheet {
+    private ExportHTML exportHTML = new ExportHTML();
+    private FetchDatabase fetchDatabase = new FetchDatabase();
+
+    public void generateBalanceSheet(){
+      List<Object[]> dataFromDB =
+      fetchDatabase.fetchDataFromDatabase();
+        exportHTML.exportToHTML(dataFromDB);
+     }
+}
+At first glance, this design looks good, as we separated the responsibilities of fetching and exporting the data into individual child modules. Good design can accommodate any future changes without breaking the system. Will this design make our system fragile in case of any future changes? Let us have a look at that.
+
+After some time, you need to fetch the data from external web services along with the database. Also, you need to export the data in PDF format rather than HTML format. To incorporate this change, you will create new classes/modules to fetch data from web services and to export the PDF as per the following snippet:
+
+// Separate child module for fetch the data from web service.
+public class FetchWebService {
+    public List<Object[]> fetchDataFromWebService(){
+         List<Object[]> dataFromWebService = new ArrayList<Object[]>();
+        //Logic to call Web Service and fetch the data and return it.
+        return dataFromWebService;
+     }
+}
+// Separate child module for export in PDF
+public class ExportPDF {
+    public File exportToPDF(List<Object[]> dataLst){
+        File pdfFile = null;
+        //Logic to iterate the dataLst and generate PDF file
+        return pdfFile;
+    }
+}
+To accommodate the new ways of fetching and exporting data, the balance sheet module needs some sort of flag. Based on the value of this flag, the respective child module will be instantiated in the balance sheet module. The updated code of the BalanceSheet module would be as follows:
+
+public class BalanceSheet {
+
+  private ExportHTML exportHTML = null;
+  private FetchDatabase fetchDatabase = null;
+  private ExportPDF exportPDF = null;
+  private FetchWebService fetchWebService = null;
+
+  public void generateBalanceSheet(int inputMethod, int outputMethod){
+
+    //1. Instantiate the low level module object.
+    if(inputMethod == 1){
+      fetchDatabase = new FetchDatabase();
+    }else if(inputMethod == 2){
+      fetchWebService = new FetchWebService();
+    }
+
+    //2. fetch and export the data for specific format based on flags.
+    if(outputMethod == 1){
+        List<Object[]> dataLst = null;
+        if(inputMethod == 1){
+          dataLst = fetchDatabase.fetchDataFromDatabase();
+        }else{
+          dataLst = fetchWebService.fetchDataFromWebService();
+        }
+      exportHTML.exportToHTML(dataLst);
+    }else if(outputMethod ==2){
+        List<Object[]> dataLst = null;
+        if(inputMethod == 1){
+          dataLst = fetchDatabase.fetchDataFromDatabase();
+        }else{
+          dataLst = fetchWebService.fetchDataFromWebService();
+        }
+      exportPDF.exportToPDF(dataLst);
+    }
+
+  }
+}
+Great work! Our application is able to handle two different input and output methods to generate balance sheets. But wait a minute; what happens when you need to add more  methods (fetch and export data) in the future? For example, you might need to fetch the data from google drive and export the balance sheet in Excel format.
+
+For every new method of input and output, you need to update your main module, the balance sheet module. When a module is dependent on another concrete implementation, it's said to be tightly coupled on that. This breaks the fundamental principle: open for extension but closed for modification.
+
+Let's recall what DIP talks about: high-level modules should not depend on low-level modules for their responsibilities. Both should depend on abstractions.
+
+This is the fundamental problem in our design. In our case, the balance sheet (high-level) module tightly depends on fetch database and export HTML data (low-level) modules.
+
+As we have seen, principles always show the solution to design problems. It doesn't talk about how to implement it. In our case, DIP talks about removing the tight dependency of low-level modules on high-level modules.
+
+But how do we do that? This is where IoC comes into the picture. IoC shows a way of defining abstraction between modules. In short, IoC is the way to implement DIP.
