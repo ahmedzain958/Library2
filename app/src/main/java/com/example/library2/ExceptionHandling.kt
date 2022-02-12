@@ -37,3 +37,21 @@ fun vote2(name: String, age: Int) {
 }
 
 class IllegalVoterException(message: String) : Exception(message)
+
+/*
+*  For example, say you have some code that accesses files, handles arrays, and in addition might throw unknown exceptions. Here you’d write
+try {
+    // ... file access
+    // ... array access
+} catch(e:IOException) {
+    // do something...
+} catch(e:ArrayIndexOutOfBoundsException) {
+    // do something...
+} catch(e:Exception) {
+    // do something...
+} finally {
+    // do this by any means: ...
+}
+where the finally clause is optional, as usual.
+*
+* CautionBe careful not to abuse try-catch blocks for somewhat exceptional but otherwise expected program flow paths. You should really use exceptions only for unanticipated problems.*/
