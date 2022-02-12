@@ -8,7 +8,8 @@ You can create you own custom exception class, each exception class contains the
  */
 fun main() {
     /*
-    * If an exception gets thrown inside try{ }, all the catch clauses get checked one after another, and if one of the declared exceptions matches, the corresponding catch clause gets executed. */
+    * If an exception gets thrown inside try{ }, all the catch clauses get checked one after another, and if one of the declared exceptions matches, the corresponding catch clause gets executed.
+    * What you usually do if you want to catch several exceptions is to put the more specific catches at the beginning of the list and the most general at the end. */
 try {
     vote2("Ahmed", 7)
 }catch (e: IllegalVoterException){
