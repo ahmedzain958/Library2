@@ -61,6 +61,22 @@ fun main() {
         //child1.cancelAndJoin() when job1 finished, it cancels it
         launch{ delay(2000)} // in order to make this happen after child1 and child2 execution, use join()
     }
+    //dont forget at the end to call
+    parentJob2.cancel()
+    //------------------------------------------------------
+    val parentJob3 : Job = Job()
+    val coroutinesScope:CoroutineScope = CoroutineScope(Dispatchers.IO + parentJob3)
+    coroutinesScope.launch {
+        val child1 =  launch { getUserFromNetwork() }//child to the childToParent which is child to parentJob
+        val child2 = launch { getUserFromDB() }//child to the childToParent which is child to parentJob
+        child1.join()// makes a suspend to the thread until the joined job (child1) finished
+        child2.join()// makes a suspend to the thread until the joined job (child2) finished
+        //till now the next line launch{ delay(2000)} won't be executed until child1 and child2 are finished
+        //child1.join(), child2.join() = joinAll(child1, child2)
+        //child1.cancelAndJoin() when job1 finished, it cancels it
+        launch{ delay(2000)} // in order to make this happen after child1 and child2 execution, use join()
+    }
+
 }
 
 private suspend fun getUserFromDB(): String {
