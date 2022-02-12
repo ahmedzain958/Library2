@@ -7,6 +7,8 @@ ArithmeticException, OutOfBoundException, ... are classes used for exception han
 You can create you own custom exception class, each exception class contains the message, stacktrace
  */
 fun main() {
+    /*
+    * If an exception gets thrown inside try{ }, all the catch clauses get checked one after another, and if one of the declared exceptions matches, the corresponding catch clause gets executed. */
 try {
     vote2("Ahmed", 7)
 }catch (e: IllegalVoterException){
