@@ -1,11 +1,11 @@
 package com.example.library2
 
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.Job
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
+import kotlinx.coroutines.*
 
 fun main() {
+    /*
+    * every line     //------------------------------------------------------ represents a topic
+    * */
     //------------------------------------------------------
     //the next all between curly braces is called coroutine builder
     GlobalScope.launch {//parent job: if cancelled all the children will be cancelled
@@ -37,6 +37,30 @@ fun main() {
     }
     parentJob.cancel()// cancels childToParent and its children
     //------------------------------------------------------
+    //ex: I want to make a delay after 2 children finished
+    val parentJob1 : Job = Job()
+    //then I will make childToParent child to the parentJob
+    val childToParent1: Job = GlobalScope.launch(parentJob1) {
+       val child1 =  launch { getUserFromNetwork() }//child to the childToParent which is child to parentJob
+       val child2 = launch { getUserFromDB() }//child to the childToParent which is child to parentJob
+        child1.join()// makes a suspend to the thread until the joined job finished
+        //till now the next line launch{ delay(2000)} won't be executed until child1 only is finished
+       launch{ delay(2000)} // in order to make this happen after child1 and child2 execution, use join()
+    }
+    //------------------------------------------------------
+    //ex: I want to make a delay after 2 children finished
+    val parentJob2 : Job = Job()
+    //then I will make childToParent child to the parentJob
+    val childToParent2: Job = GlobalScope.launch(parentJob2) {
+        val child1 =  launch { getUserFromNetwork() }//child to the childToParent which is child to parentJob
+        val child2 = launch { getUserFromDB() }//child to the childToParent which is child to parentJob
+        child1.join()// makes a suspend to the thread until the joined job (child1) finished
+        child2.join()// makes a suspend to the thread until the joined job (child2) finished
+        //till now the next line launch{ delay(2000)} won't be executed until child1 and child2 are finished
+        //child1.join(), child2.join() = joinAll(child1, child2)
+        //child1.cancelAndJoin() when job1 finished, it cancels it
+        launch{ delay(2000)} // in order to make this happen after child1 and child2 execution, use join()
+    }
 }
 
 private suspend fun getUserFromDB(): String {
