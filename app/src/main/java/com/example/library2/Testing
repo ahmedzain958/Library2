@@ -1,0 +1,44 @@
+https://abbreviations.yourdictionary.com/articles/what-is-the-difference-between-an-abbreviation-and-an-acroynm.html
+
+* SUT: system-under-test  During setup there are two kinds of object that we are putting together. Order is the class that we are testing,
+                        but for Order.fill to work we also need an instance of Warehouse.
+                        In this situation Order is the object that we are focused on testing.
+                        Testing-oriented people like to use terms like object-under-test or system-under-test to name such a thing.
+                        So for this test I need the SUT (Order) and one collaborator (warehouse).
+                        https://martinfowler.com/articles/mocksArentStubs.html
+
+                        public class OrderStateTester extends TestCase {
+                          private static String TALISKER = "Talisker";
+                          private static String HIGHLAND_PARK = "Highland Park";
+                          private Warehouse warehouse = new WarehouseImpl();
+
+                          protected void setUp() throws Exception {
+                            warehouse.add(TALISKER, 50);
+                            warehouse.add(HIGHLAND_PARK, 25);
+                          }
+                          public void testOrderIsFilledIfEnoughInWarehouse() {
+                            Order order = new Order(TALISKER, 50);
+                            order.fill(warehouse);
+                            assertTrue(order.isFilled());
+                            assertEquals(0, warehouse.getInventory(TALISKER));
+                          }
+                          public void testOrderDoesNotRemoveIfNotEnough() {
+                            Order order = new Order(TALISKER, 51);
+                            order.fill(warehouse);
+                            assertFalse(order.isFilled());
+                            assertEquals(50, warehouse.getInventory(TALISKER));
+                          }
+
+* AAA: Arrange Act Assert : each unit test should pass by these 3 steps
+
+* Mocks: are not used for checking function behaviour or return values from functions (not used for whether the function succeeded, failed),
+                           they replace external interfaces
+                           like mocking Socket.connect(), checking whether fn is called or not whether my function called socket.connect()
+                           or not, How many times it gets called? - what parameters are passed when it is called?
+                           Right call, right number of times with right setup parameters
+                           used for mocked fn is called properly or not (..images/mocks.png)
+
+* Stubs: mocks + expected return value of a method every{ mocked_database.getSubscribersNumber() } returns { 3 }
+
+
+
