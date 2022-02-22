@@ -59,5 +59,6 @@ class SpyTest {
     }
     /**
      * spying is confusing because if you stubbed a certain method in a class and using the real logic in other parts
+     * A spy is for mixing mocks and objects
      */
 }
