@@ -1,11 +1,16 @@
 package com.example.library2
 
-enum class Direction{
+enum class Direction {
     NORTH,
     SOUTH
 }
+
 class Car {
-    fun drive(direction: Direction, speed: Long):String {
-        return "Driving $direction at speed $speed"
+    fun drive(direction: Direction): String {
+        return "Driving $direction at speed "
+    }
+
+    fun drive2(direction: Direction): String {
+        return "Driving $direction at speed "
     }
 }
