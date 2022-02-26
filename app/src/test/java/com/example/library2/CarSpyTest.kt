@@ -1,8 +1,6 @@
 package com.example.library2
 
-import io.mockk.confirmVerified
-import io.mockk.spyk
-import io.mockk.verify
+import io.mockk.*
 import org.junit.Test
 
 class CarSpyTest {
@@ -26,6 +24,28 @@ class CarSpyTest {
 
 because the real call to the car methods (.drive() && .drive2()) is that Recorded call count: 2 but the only verified one was verify { car.drive(Direction.NORTH) }
          not verify { car2.drive(Direction.NORTH) } as well
+         - every method called should be verified
          */
+    }
+
+    @Test
+    fun testRelaxedMock(){
+        val car = mockk<Car>(relaxed = true)
+
+        car.drive(Direction.NORTH) // returns null
+
+        verify { car.drive(Direction.NORTH) }
+
+        confirmVerified(car)
+    }
+
+    @Test
+    fun testRelaxedMockGenericType(){
+        val func: () -> Car = mockk<() -> Car>(relaxed = true) // in this case invoke function has generic return type
+
+        // this line is workaround, without it the relaxed mock would throw a class cast exception on the next line
+        every { func() } returns Car() // or you can return mockk() for example
+
+        func()
     }
 }
