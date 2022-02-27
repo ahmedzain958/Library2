@@ -131,8 +131,10 @@ class CarSpyTest {
     @Test
     fun testCapturing() {
         val car = mockk<Car>()
+
         val slot = slot<Double>()
         val list = mutableListOf<Double>()
+
         every {
             car.recordTelemetry(
                 speed = capture(slot), // makes mock match calls with any value for `speed` and record it in a slot
@@ -142,6 +144,8 @@ class CarSpyTest {
             println(slot.captured)
 
         }
+
+
         every {
             car.recordTelemetry(
                 speed = capture(list),
@@ -150,9 +154,10 @@ class CarSpyTest {
         } answers {
             println(list)
         }
+
         car.recordTelemetry(speed = 15.0, direction = Direction.NORTH) // prints 15
         car.recordTelemetry(speed = 16.0, direction = Direction.SOUTH) // prints 16
-        verify(exactly = 1) { car.recordTelemetry(speed = or(15.0, 16.0), direction = any()) }
+        verify(exactly = 2) { car.recordTelemetry(speed = or(15.0, 16.0), direction = any()) }
         confirmVerified(car)
 
     }
