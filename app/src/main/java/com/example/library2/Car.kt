@@ -13,4 +13,8 @@ class Car {
     fun drive2(direction: Direction): String {
         return "Driving $direction at speed "
     }
+
+    fun recordTelemetry(speed: Double, direction: Direction) {
+
+    }
 }

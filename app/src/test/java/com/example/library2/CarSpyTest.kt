@@ -128,4 +128,34 @@ class CarSpyTest {
             println("zain invoked with $it") //invoked with STATE1
         }
     }
+    @Test
+    fun testCapturing() {
+        val car = mockk<Car>()
+        val slot = slot<Double>()
+        val list = mutableListOf<Double>()
+        every {
+            car.recordTelemetry(
+                speed = capture(slot), // makes mock match calls with any value for `speed` and record it in a slot
+                direction = Direction.NORTH // makes mock and capturing only match calls with specific `direction`. Use `any()` to match calls with any `direction`
+            )
+        } answers {
+            println(slot.captured)
+
+        }
+        every {
+            car.recordTelemetry(
+                speed = capture(list),
+                direction = Direction.SOUTH
+            )
+        } answers {
+            println(list)
+        }
+        car.recordTelemetry(speed = 15.0, direction = Direction.NORTH) // prints 15
+        car.recordTelemetry(speed = 16.0, direction = Direction.SOUTH) // prints 16
+        verify(exactly = 1) { car.recordTelemetry(speed = or(15.0, 16.0), direction = any()) }
+        confirmVerified(car)
+
+    }
+
+
 }
