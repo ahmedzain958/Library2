@@ -2,7 +2,7 @@ CI: any change (PR) involved in the code should be validated and passed by steps
 
 C-Delivery: software development discipline where sw is created in such a way it can be launched into production anytime, but beware, continuous
 delivery doesn't necessarily mean that it is released every time there is a change, it only happens if the business manager/ PO of turn
-decides to go into production - beware of notifying customer about every update not the best practice
+decides to go into production (manual build) - beware of notifying customer about every update not the best practice
 
 Continuous deployment: every change that passes all the stages of your production chain is released to your customers, there is no
 human intervention
@@ -14,6 +14,7 @@ Pipeline: once you make a PR, a group of tasks(jobs) will be executed in stages 
 you must run your code against all the rules, then send build to the QA using App center of Fabric beta (deprecated)
 
 Build -----> QA/ Performance tests -----> staging -----> production
+
 
 
 Note: based on the branch you could just send the build to the testing only or release as well
