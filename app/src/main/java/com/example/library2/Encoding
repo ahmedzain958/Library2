@@ -1,0 +1,12 @@
+Types of Encoding Techniques
+The process of conversion of data from one form to another form is known as Encoding. It is used to transform the data so that data can be supported and used by different systems. Encoding works similarly to converting temperature from centigrade to Fahrenheit, as it just gets converted in another form, but the original value always remains the same. Encoding is used in mainly two fields:
+
+Encoding in Electronics: In electronics, encoding refers to converting analog signals to digital signals.
+Encoding in Computing: In computing, encoding is a process of converting data to an equivalent cipher by applying specific code, letters, and numbers to the data.
+Note: Encoding is different from encryption as its main purpose is not to hide the data but to convert it into a format so that it can be properly consumed.
+In this topic, we are going to discuss the different types of encoding techniques that are used in computing.
+
+Character Encoding
+Character encoding encodes characters into bytes. It informs the computers how to interpret the zero and ones into real characters, numbers, and symbols. The computer understands only binary data; hence it is required to convert these characters into numeric codes. To achieve this, each character is converted into binary code, and for this, text documents are saved with encoding types. It can be done by pairing numbers with characters. If we don't apply character encoding, our website will not display the characters and text in a proper format. Hence it will decrease the readability, and the machine would not be able to process data correctly. Further, character encoding makes sure that each character has a proper representation in computer or binary format.
+
+There are different types of Character Encoding techniques, which are given below:
