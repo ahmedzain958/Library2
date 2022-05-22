@@ -110,7 +110,7 @@ class MainViewModel : ViewModel() {
      * Everything else is optional.
      */
     private fun isUserInformationValid(): Boolean {
-        return  return !firstName.value.isNullOrBlank()
+         return !firstName.value.isNullOrBlank()
                 && !lastName.value.isNullOrBlank()
                 && isValidEmail(email.value)
     }
