@@ -33,11 +33,16 @@ class CircleSolution: ShapeSolution{
      return  6*6
     }
 }
+class SquareSolution: ShapeSolution{
+    override fun calculateArea(): Int {
+     return  6*8
+    }
+}
 
 
 class AreaCalculationSolution {
     fun calculateArea(shape: ShapeSolution): Int {
         return shape.calculateArea()
     }
-//if we got another shape like a square, we must add if condition to the method
+//if we got another shape like a square, we regularly implement the ShapeSolution interface
 }
