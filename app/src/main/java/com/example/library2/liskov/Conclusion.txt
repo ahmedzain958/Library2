@@ -1,0 +1,12 @@
+Liskov's Substitution Principle:
+- Objects of Super-types are replaceable by objects of sub-types, without altering any of the desirable properties of the program.
+- If the overridden function throws an exception or implements nothing, then you are probably violating the LSP
+ماشية بمبدأ ما تجودش لا بزيادة زي مثال ال
+ReplacableObjects.kt
+ولا بنقصان زي مثال ال
+
+
+https://www.youtube.com/watch?v=pUneavp1gEA&t=117s child can make things similar to its parent
+
+لو الاب مش موجود الابن يقدر يحل محل الاب و يقوم بدوره
+اعملي قهوة زي ابوك , لا معنديش في مياة تنفع
