@@ -17,7 +17,7 @@ class CustomLogError: LogError() {// cause this has extra method called customLo
 }
 
 /*if we used LogError in another class and replaced with CustomLogError,
-the call of logError() method will use the parent/supertype method not the child onw
+the call of logError() method will use the parent/supertype method not the child one
  */
 
 //---------------------solution------------------

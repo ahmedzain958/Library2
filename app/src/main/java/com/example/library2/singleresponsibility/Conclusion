@@ -1,0 +1,19 @@
+- Make the smallest unit in your code (function) plays just one role.
+    ex: make a function to sum only not sum, subtract, divide and print
+    which achieves the re-usability
+- for a larger unit (class) must be responsible for just one responsibility,
+    no need to make the class containing just one function
+    all methods and attributes correlation/linkage/interconnection ترابط is very high and related to themselves
+    ex: Calculator class => contains functions like sum, subtract, divide, power (all do calculations)
+
+
+
+
+
+
+
+    attribute
+        referring to additional information to an object
+
+    property
+        describes the characteristics of an object
