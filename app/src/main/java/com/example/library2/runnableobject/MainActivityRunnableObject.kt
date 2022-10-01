@@ -38,7 +38,18 @@ class MainActivityRunnableObject : AppCompatActivity() {
         }
         val handler =  Handler()
         handler.post(runnble)
-
+        //delay execution of runnable object
+        //the next execution doesn't take place concurrently (happening one after another, so the user can't tell the difference), they all executed instantly
+        Handler().postDelayed({
+            Thread.sleep(300)
+            log("Operation from delayed Runnable1")}, 1000/*indicates how long you want to wait from the time the code was executed*/)
+        Handler().postDelayed({
+            Thread.sleep(200)
+            log("Operation from delayed Runnable2")}, 1000)
+        Handler().postDelayed({
+            Thread.sleep(100)
+            log("Operation from delayed Runnable3")}, 1000)// all previous code starts instantly, but they are happening one after the other and happening so fast that the user can't tell the difference
+        //
         log("Synchronous operation 1")
         log("Synchronous operation 2")
         log("Synchronous operation 3")
