@@ -1,4 +1,4 @@
-package com.example.library2.runnableobject
+package com.example.library2.runnableobjectinsideathread
 
 import android.os.Build
 import android.os.Bundle
@@ -8,18 +8,22 @@ import android.widget.ScrollView
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.example.library2.databinding.ActivityMainRunnableObjectBinding
+import com.example.library2.databinding.ActivityMainRunnableObjectInThreadBinding
+import kotlinx.android.synthetic.main.todo_item.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-//https://www.linkedin.com.mcas.ms/learning/concurrent-programming-with-android-threads-workers-and-kotlin-coroutines/delay-execution-of-a-runnable-object?autoplay=true&resume=false&u=2037052
-class MainActivityRunnableObject : AppCompatActivity() {
+import kotlin.concurrent.thread
 
-    private lateinit var binding: ActivityMainRunnableObjectBinding
+//https://www.linkedin.com.mcas.ms/learning/concurrent-programming-with-android-threads-workers-and-kotlin-coroutines/delay-execution-of-a-runnable-object?autoplay=true&resume=false&u=2037052
+class MainActivityRunnableObjectInThread : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainRunnableObjectInThreadBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         // Initialize view binding for view object references
-        binding = ActivityMainRunnableObjectBinding.inflate(layoutInflater)
+        binding = ActivityMainRunnableObjectInThreadBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // Initialize button click handlers
@@ -34,34 +38,31 @@ class MainActivityRunnableObject : AppCompatActivity() {
      * Run some code
      */
     private fun runCode() {
-        //define an operation to be always executed at the end of the app
-        val runnble = object : Runnable{
+        // this code crashes
+       /* val runnble = object : Runnable{
             override fun run() {
                 log("Operation from Runnable")
             }
         }
-        val handler =  Handler()
-        handler.post(runnble)
-        //delay execution of runnable object
-        //the next execution doesn't take place concurrently (happening one after another, so the user can't tell the difference), they all executed instantly
-    Handler().postDelayed({
-        log("------")
-        log("Operation before delayed Runnable1 ${getCurrentTime()}")
-        Thread.sleep(300)
-            log("Operation from delayed Runnable1 ${getCurrentTime()}")}, 1000/*indicates how long you want to wait from the time the code was executed*/)
-        Handler().postDelayed({
-            Thread.sleep(200)
-            log("Operation from delayed Runnable2 ${getCurrentTime()}")}, 1000)
-        Handler().postDelayed({
-            Thread.sleep(100)
-            log("Thread =  ${Thread.currentThread().name}")
-            log("Operation from delayed Runnable3 ${getCurrentTime()}")}, 1000)// all previous code starts instantly, but they are happening one after the other (in sequence) and happening so fast that the user can't tell the difference
-        //
-        log("Synchronous operation 1")
-        log("Synchronous operation 2")
-        log("Synchronous operation 3")
+       val thread = Thread(runnble)
+        thread.start()*/
+        val runnble = object : Runnable{
+            override fun run() {
+                Log.i("","Operation from Runnable") //instead of the log that changes the textview's value
+            }
+        }
+        val thread = Thread(runnble)
+        thread.start()
 
-        //note that runnable object when runs in handler it runs int the UI(Main) thread
+        // or
+        Thread{
+            //your runnable goes here
+        }.start()
+        // or equals the upper example
+        thread(start = true){
+            Log.i("","Operation from Runnable") //instead of the log that changes the textview's value
+        }
+        //note that runnable object when runs in thread it runs in the bg thread
     }
 
     /**
