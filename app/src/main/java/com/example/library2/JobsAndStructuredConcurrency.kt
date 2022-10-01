@@ -9,7 +9,9 @@ fun main() {
     //------------------------------------------------------
     //the next all between curly braces is called coroutine builder
     GlobalScope.launch {//parent job: if cancelled all the children will be cancelled
-        launch { launch { }/*child of child1*/ }//child 1 job : both launch are coroutines not suspend functions thus 2 parallel launch coroutines builders executed in parallel/asynchronously counter-wise 2 parallel suspend fns executed synchronously
+        launch { launch { }/*child of child1*/ }//child 1 job : both launch are coroutines not suspend functions
+        // thus 2 parallel launch coroutines builders executed in parallel/asynchronously counter-wise 2 parallel suspend fns
+        // executed synchronously
         launch { }//child 2 job : both launch are coroutines not suspend functions
     }
     //Note: if any child failed all, the Parent job will be cancelled - beside parent job will not be completed until all the
@@ -17,7 +19,7 @@ fun main() {
     //------------------------------------------------------
     /*Structured Concurrency: relationships between coroutines in-which one depends on the other and another one
     is a child of the other, and one can't work until the other completes
-    ma2bad w no2at bedaya w no2at nehaya w de ma te9lash 2abl d- w te mo3tameda 3la d
+    ma2bad w no2at bedaya w no2at nehaya w de ma te9lash 2abl d- w de mo3tameda 3la d
     w d if cancelled all before will be cancelled as well*/
     //------------------------------------------------------
     //job cancellation method 1
