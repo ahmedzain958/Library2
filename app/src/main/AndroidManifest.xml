@@ -24,10 +24,15 @@
             </intent-filter>-->
         </activity>
         <activity android:name=".manageconcurrenttaskscoroutines.MainActivityCoroutines" android:exported="true">
-              <intent-filter>
-                  <action android:name="android.intent.action.MAIN" />
-                  <category android:name="android.intent.category.LAUNCHER" />
-              </intent-filter>
+
+        </activity>
+        <activity android:name=".viewmodelcoroutines.MainActivityCoroutines" android:exported="true">
+        </activity>
+        <activity android:name=".challenge2convertthreadstocoroutinesviewmodel.ViewModelCoroutinesMainActivity" android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

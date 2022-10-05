@@ -87,9 +87,9 @@ dependencies {
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
     implementation "androidx.activity:activity-ktx:1.4.0"/*this is for by viewModels<>*/
 
-    // Coroutines
-    /*api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
-    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"*/
+// Coroutines
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-core:$rootProject.coroutines"
+    api "org.jetbrains.kotlinx:kotlinx-coroutines-android:$rootProject.coroutines"
 
     implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit2"
     implementation "com.google.code.gson:gson:$rootProject.gsonVersion"
@@ -105,5 +105,4 @@ dependencies {
 
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
-    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
 }
