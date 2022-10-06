@@ -16,8 +16,11 @@
             android:exported="false" />
         <service
             android:name=".longbackgroundtasksJobIntentService.MyJobIntentService"
-            android:permission="android.permission.BIND_JOB_SERVICE"
-            android:exported="false" />
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service android:name=".longbgtasksjobintentserviceresultreceiver.MyIntentService"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <activity
             android:name=".runnableobject.MainActivityRunnableObject"
@@ -52,14 +55,16 @@
             android:exported="true">
 
         </activity>
-    <activity
+        <activity
             android:name=".longbackgroundtasksIntentService.MainActivityIntentService"
+            android:exported="true" />
+        <activity android:name=".longbgtasksjobintentserviceresultreceiver.JobIntentServiceMainActivity"
             android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 
