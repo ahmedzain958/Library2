@@ -42,9 +42,20 @@ class WorkManagerLiveDataMainActivity : AppCompatActivity() {
         workManager.enqueue(workRequest)
         val workInfoLiveData = workManager.getWorkInfoByIdLiveData(workRequest.id)
         workInfoLiveData.observe(this, Observer {//work just like if you are working with the view mode
-            if (it.state == WorkInfo.State.SUCCEEDED){
-                val result = it.outputData.getString(DATA_KEY)
-                log(result ?: "Null")
+            when (it.state) {
+                WorkInfo.State.SUCCEEDED -> {
+                    val result = it.outputData.getString(DATA_KEY)
+                    log(result ?: "Null")
+                }
+                WorkInfo.State.RUNNING -> {
+                    val progress = it.progress.getString(MESSAGE_KEY)
+                    progress?.let {
+                        log(progress)
+                    }
+                }
+                else -> {
+
+                }
             }
         })
     }
