@@ -12,24 +12,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <service
+            android:name=".MyService"
+            android:enabled="true"
+            android:exported="false"></service>
+        <service
             android:name=".longbackgroundtasksIntentService.MyIntentService"
             android:exported="false" />
         <service
             android:name=".longbackgroundtasksJobIntentService.MyJobIntentService"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
-        <service android:name=".longbgtasksjobintentserviceresultreceiver.MyIntentService"
+        <service
+            android:name=".longbgtasksjobintentserviceresultreceiver.MyIntentService"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <activity
             android:name=".runnableobject.MainActivityRunnableObject"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".challenge1runnable.MainActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".manageconcurrenttaskscoroutines.MainActivityCoroutines"
             android:exported="true" />
@@ -38,17 +41,17 @@
             android:exported="true" />
         <activity
             android:name=".challenge2convertthreadstocoroutinesviewmodel.ViewModelCoroutinesMainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".longbackgroundtasksIntentService.MainActivityIntentService"
             android:exported="true" />
-        <activity android:name=".longbgtasksjobintentserviceresultreceiver.JobIntentServiceMainActivity"
-            android:exported="true">
-        </activity>
+        <activity
+            android:name=".longbgtasksjobintentserviceresultreceiver.JobIntentServiceMainActivity"
+            android:exported="true"></activity>
         <activity android:name=".longrunningworkmanager.WorkManagerMainActivity" />
-        <activity android:name=".workmanagergettingresultsfromlivedata.WorkManagerLiveDataMainActivity"  android:exported="true">
+        <activity
+            android:name=".workmanagergettingresultsfromlivedata.WorkManagerLiveDataMainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
