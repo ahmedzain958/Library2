@@ -1,6 +1,7 @@
 package com.example.library2.longrunningboundservice
 
 import android.content.ComponentName
+import android.content.Context
 import android.content.Intent
 import android.content.ServiceConnection
 import android.os.Bundle
@@ -47,7 +48,7 @@ class LongRunningBoundServiceMainActivity : AppCompatActivity() {
      * Run some code
      */
     private fun runCode() {
-
+        myservice.doSomething()
     }
 
     /**
@@ -78,7 +79,12 @@ class LongRunningBoundServiceMainActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Intent(this, MyService::class.java).also {
-
+            bindService(it, serviceConnection, Context.BIND_AUTO_CREATE)
         }
+    }
+
+    override fun onStop() {
+        super.onStop()
+        unbindService(serviceConnection)
     }
 }
