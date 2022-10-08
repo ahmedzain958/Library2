@@ -10,10 +10,6 @@ import android.os.IBinder
 import android.util.Log
 import android.widget.ScrollView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.work.Constraints
-import androidx.work.NetworkType
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
 import com.example.library2.databinding.ActivityMainRunnableObjectBinding
 
 class LongRunningBoundServiceMainActivity : AppCompatActivity() {
@@ -40,7 +36,10 @@ class LongRunningBoundServiceMainActivity : AppCompatActivity() {
 
         // Initialize button click handlers
         with(binding) {
-            runButton.setOnClickListener { runCode() }
+            runButton.setOnClickListener { runCode()
+                myservice.startAudio()
+
+            }
             clearButton.setOnClickListener { clearOutput() }
         }
 
@@ -57,6 +56,7 @@ class LongRunningBoundServiceMainActivity : AppCompatActivity() {
      * Clear log display
      */
     private fun clearOutput() {
+        myservice.stopMusic()
         binding.logDisplay.text = ""
         scrollTextToEnd()
     }
@@ -93,6 +93,5 @@ class LongRunningBoundServiceMainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.i(LOG_TAG, "service destroyed")
     }
 }

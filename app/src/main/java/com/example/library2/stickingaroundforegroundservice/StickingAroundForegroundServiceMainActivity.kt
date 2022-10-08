@@ -10,10 +10,6 @@ import android.os.IBinder
 import android.util.Log
 import android.widget.ScrollView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.work.Constraints
-import androidx.work.NetworkType
-import androidx.work.OneTimeWorkRequestBuilder
-import androidx.work.WorkManager
 import com.example.library2.databinding.ActivityMainRunnableObjectBinding
 
 class StickingAroundForegroundServiceMainActivity : AppCompatActivity() {
@@ -43,20 +39,20 @@ class StickingAroundForegroundServiceMainActivity : AppCompatActivity() {
             runButton.setOnClickListener { runCode() }
             clearButton.setOnClickListener { clearOutput() }
         }
-
     }
 
     /**
      * Run some code
      */
     private fun runCode() {
-        myservice.doSomething()
+        myservice.startMusic()
     }
 
     /**
      * Clear log display
      */
     private fun clearOutput() {
+        myservice.stopMusic()
         binding.logDisplay.text = ""
         scrollTextToEnd()
     }
