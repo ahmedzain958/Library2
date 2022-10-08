@@ -26,6 +26,8 @@
             android:name=".longbgtasksjobintentserviceresultreceiver.MyIntentService"
             android:exported="false"
             android:permission="android.permission.BIND_JOB_SERVICE" />
+        <service android:name=".longrunningboundservice.MyService" android:enabled="true"/>
+        <service android:name=".stickingaroundforegroundservice.MyStickingAroundForegroundService" android:enabled="true"/>
 
         <activity
             android:name=".runnableobject.MainActivityRunnableObject"
@@ -52,6 +54,12 @@
         <activity
             android:name=".workmanagergettingresultsfromlivedata.WorkManagerLiveDataMainActivity"
             android:exported="true">
+
+        </activity>
+        <activity android:name=".longrunningboundservice.LongRunningBoundServiceMainActivity" android:exported="true">
+
+        </activity>
+        <activity android:name=".stickingaroundforegroundservice.StickingAroundForegroundServiceMainActivity" android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

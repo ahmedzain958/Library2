@@ -1,4 +1,4 @@
-package com.example.library2.longrunningboundservice
+package com.example.library2.stickingaroundforegroundservice
 
 import android.content.ComponentName
 import android.content.Context
@@ -16,13 +16,13 @@ import androidx.work.OneTimeWorkRequestBuilder
 import androidx.work.WorkManager
 import com.example.library2.databinding.ActivityMainRunnableObjectBinding
 
-class LongRunningBoundServiceMainActivity : AppCompatActivity() {
+class StickingAroundForegroundServiceMainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainRunnableObjectBinding
-    private lateinit var myservice: MyService
+    private lateinit var myservice: MyStickingAroundForegroundService
     private val serviceConnection = object: ServiceConnection{
         override fun onServiceConnected(name: ComponentName?, service: IBinder?) {
-            val binder = service as MyService.MyServiceBinder
+            val binder = service as MyStickingAroundForegroundService.MyServiceBinder
             myservice = binder.getService()
         }
 
@@ -80,7 +80,7 @@ class LongRunningBoundServiceMainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        Intent(this, MyService::class.java).also {
+        Intent(this, MyStickingAroundForegroundService::class.java).also {
             bindService(it, serviceConnection, Context.BIND_AUTO_CREATE)
             startService(it)
         }
