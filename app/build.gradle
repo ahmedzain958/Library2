@@ -2,9 +2,6 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'kotlin-android-extensions'
-    id 'dagger.hilt.android.plugin'
-
 }
 
 android {
@@ -93,12 +90,9 @@ dependencies {
     implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp3"
     implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
 
-    implementation "com.google.dagger:hilt-android:$hiltVersion"
-    kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
-    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltAndroidXVersion"
-    kapt "androidx.hilt:hilt-compiler:$hiltAndroidXVersion"
-
-
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+    implementation "androidx.recyclerview:recyclerview:1.2.1"
+    implementation 'com.airbnb.android:lottie:5.0.3'
+
 }
