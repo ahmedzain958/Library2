@@ -11,7 +11,7 @@ class ViewsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_views)
         val items = listOf(
-            "Views" to LottieViewActivity::class.java
+            "Lottie view on Button" to LottieViewActivity::class.java
         )
 
         val commonList = findViewById<CommonList>(R.id.commonList)

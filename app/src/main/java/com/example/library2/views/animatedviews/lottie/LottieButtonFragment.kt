@@ -17,8 +17,8 @@ class LottieButtonFragment : Fragment(R.layout.lottie_button_layout) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setObservers()
-        setClickListeners()
+        /*setObservers()
+        setClickListeners()*/
     }
 
     private fun setObservers() {
