@@ -9,7 +9,7 @@ class LottieButtonViewModel : ViewModel() {
     private val _isFavButtonActive = MutableLiveData(false)
     val isFavButtonActive: LiveData<Boolean> = _isFavButtonActive
 
-    fun toggleFavButtonState() {
-        _isFavButtonActive.value = !(_isFavButtonActive.value ?: false)
+    fun setAnimationInactive() {
+        _isFavButtonActive.value = false
     }
 }
