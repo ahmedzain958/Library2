@@ -4,6 +4,7 @@ import android.animation.Animator
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.airbnb.lottie.LottieAnimationView
 import com.example.library2.R
 
