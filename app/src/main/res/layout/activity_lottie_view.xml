@@ -6,16 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/fav_button_lav"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activity_lottie"
         android:layout_width="match_parent"
-        android:layout_height="90dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintWidth_percent="0.9"
-        app:layout_constraintDimensionRatio="H,3:1"
-        app:lottie_loop="true"
-        app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/hamburger" />
+        android:layout_height="match_parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
