@@ -16,6 +16,6 @@
         app:layout_constraintDimensionRatio="H,3:1"
         app:lottie_loop="true"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/hoodie" />
+        app:lottie_rawRes="@raw/hamburger" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
