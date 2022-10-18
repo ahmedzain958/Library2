@@ -1,4 +1,4 @@
-package com.example.library2.oop;
+package com.example.library2.hackerrank.oop;
 
 import java.util.Scanner;
 
