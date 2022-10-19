@@ -1,40 +1,26 @@
 package com.example.library2.leetcode
 
-class PivotIndex {
-    /* fun pivotIndex(nums: IntArray): Int {
-         for (i in 1 until nums.size) {
-             val sumLeftArray = Array(nums.size){nums[i]+nums[i-1]}
-             val sumRightArray = arrayOf(nums.size)
-             sumLeftArray[i - 1] += nums[i - 1]
-             sumRightArray[i + 1] += nums[i + 1]
-             if (sumLeftArray[i - 1] == sumRightArray[i + 1] - nums[i]) {
-                 return i
-             }
-             return 0
-         }
-     }
-     fun setUpLeftArray(index: Int){
-         return
-     }*/
+fun pivotIndex(nums: IntArray): Int {
+    val sumLeftArray = IntArray(nums.size)
+    sumLeftArray[0] = nums[0]
+    val sumRightArray = IntArray(nums.size)
+    sumRightArray[0] = nums[0]
+
+    for (i in 1 until sumLeftArray.size) {
+        sumLeftArray[i] += nums[i-1]
+        for (j in sumRightArray.size - 1 downTo i) {
+            sumRightArray[j] += nums[j]
+            if (sumRightArray[j] == 0) {
+                return 0
+            } else if (sumRightArray[j] == sumLeftArray[i]) {
+                return i
+            }
+        }
+    }
+    return 0
 }
 
 fun main() {
-    val nums = arrayOf(1, 7, 3, 6, 5, 6)
-    for (i in 1 until nums.size) {
-        val sumLeftArray = Array(nums.size) {
-            nums[it] = nums[i-1] + nums[i]
-            nums[it]
-        }
-
-//        sumLeftArray[i - 1] += nums[i - 1]
-        println(sumLeftArray[i])
-    }
-    /*val fives = Array(5, ::fiver)
-    fives.forEach {
-        println(it)
-    }*/
-}
-
-fun fiver(index: Int): Int {
-    return index * 5
+    val nums = intArrayOf(1, 7, 3, 6, 5, 6)
+    println(pivotIndex(nums))
 }
