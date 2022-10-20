@@ -13,24 +13,21 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".concurrentprogramming.coroutines.CoroutinesExceptionActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="true" />
+        <activity
+            android:name=".concurrentprogramming.ConcurrentProgrammingActivity"
+            android:exported="true" />
         <activity
             android:name=".views.ViewsActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
-           <!-- <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
         <activity
             android:name=".views.animatedviews.lottie.LottieViewActivity"
