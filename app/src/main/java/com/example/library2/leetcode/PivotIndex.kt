@@ -1,23 +1,17 @@
 package com.example.library2.leetcode
 
 fun pivotIndex(nums: IntArray): Int {
-    val sumLeftArray = IntArray(nums.size)
+    var sumLeftArray: IntArray = nums
+    var sumRightArray: IntArray = nums
     sumLeftArray[0] = nums[0]
-    val sumRightArray = IntArray(nums.size)
-    sumRightArray[0] = nums[0]
-
+    sumRightArray[nums.size-1] = nums[nums.size-1]
     for (i in 1 until sumLeftArray.size) {
-        sumLeftArray[i] += nums[i-1]
-        for (j in sumRightArray.size - 1 downTo i) {
-            sumRightArray[j] += nums[j]
-            if (sumRightArray[j] == 0) {
-                return 0
-            } else if (sumRightArray[j] == sumLeftArray[i]) {
-                return i
-            }
-        }
+        sumLeftArray[i] += sumLeftArray[i-1]
     }
-    return 0
+    for (i in sumRightArray.size-2 downTo  1) {
+        sumRightArray[i] += sumRightArray[i-1]
+        println(sumRightArray[i])
+    }
 }
 
 fun main() {
