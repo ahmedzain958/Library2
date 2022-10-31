@@ -1,4 +1,4 @@
-package com.example.library2.leetcode
+package com.example.problemsolving.leetcode
 /*
 
 fun pivotIndex(nums: IntArray): Int {
