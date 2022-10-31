@@ -19,4 +19,7 @@
 
     <string name="empty_list">No museums found!</string>
     <string name="an_error_occurred">An error occurred</string>
+    <string name="title_activity_linked_in_essential_trainging_compose">
+        LinkedInEssentialTraingingComposeActivity
+    </string>
 </resources>

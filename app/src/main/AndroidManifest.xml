@@ -10,7 +10,15 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
         android:theme="@style/AppTheme">
+
+        <activity
+            android:name=".compose.recipemitch.RecipeMitchActivity"
+            android:exported="true" />
+        <activity
+            android:name=".compose.ComposeActivity"
+            android:exported="true" />
         <activity
             android:name=".concurrentprogramming.coroutines.CoroutinesExceptionActivity"
             android:exported="true" />

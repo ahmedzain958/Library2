@@ -3,14 +3,17 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/compose-model-1667241060200.xml" value="0.6173285198555957" />
         <entry key="..\:/Users/ZainElDinA/StudioProjects/Library2/app/src/main/res/drawable/ic_add_black_24dp.xml" value="0.1" />
         <entry key="..\:/Users/ZainElDinA/StudioProjects/Library2/app/src/main/res/layout/activity_add.xml" value="0.26145833333333335" />
         <entry key="..\:/Users/ZainElDinA/StudioProjects/Library2/app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="..\:/Users/ZainElDinA/StudioProjects/Library2/app/src/main/res/layout/content_main.xml" value="0.13489583333333333" />
         <entry key="..\:/Users/ZainElDinA/StudioProjects/Library2/app/src/main/res/layout/todo_item.xml" value="0.26145833333333335" />
         <entry key="app/src/main/res/drawable-v24/ic_error.xml" value="0.33541666666666664" />
+        <entry key="app/src/main/res/layout/activity_compose.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_coroutines_exception.xml" value="0.2703125" />
         <entry key="app/src/main/res/layout/activity_museum.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/activity_recipe_mitch.xml" value="0.2630208333333333" />
         <entry key="app/src/main/res/layout/activity_views.xml" value="0.2703125" />
         <entry key="app/src/main/res/layout/content_main.xml" value="0.31927083333333334" />
         <entry key="app/src/main/res/layout/layout_empty.xml" value="0.31927083333333334" />
