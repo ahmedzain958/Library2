@@ -22,4 +22,5 @@
     <string name="title_activity_linked_in_essential_trainging_compose">
         LinkedInEssentialTraingingComposeActivity
     </string>
+    <string name="title_activity_empty_compose_m3">EmptyComposeActivityM3</string>
 </resources>
