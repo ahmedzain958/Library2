@@ -1,4 +1,5 @@
 Interface: abstraction of a common behavior among set of classes, no need to have a relationship
+- From my POV: interface allows different classes to share a same behavior not similar classes share a different behavior
 
 
 

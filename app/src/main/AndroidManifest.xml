@@ -12,11 +12,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity
-            android:name=".InterfaceActivity"
+            android:name=".oop.InterfaceActivity"
             android:exported="false" />
         <activity
-            android:name=".DisadvantagesOfInheritanceActivity"
+            android:name=".designpatterns.headfirstver2.inheritanceissues.DisadvantagesOfInheritanceActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
@@ -29,7 +30,7 @@
             android:name=".designpatterns.linkedin.LikedInFoundationsDesignPatternsActivity"
             android:exported="false" />
         <activity
-            android:name=".EmptyComposeActivityM3"
+            android:name=".compose.practice.EmptyComposeActivityM3"
             android:exported="false"
             android:label="@string/title_activity_empty_compose_m3"
             android:theme="@style/AppTheme">
@@ -74,15 +75,8 @@
             android:name=".oop.StrongVsWeakISARelationship"
             android:exported="false" />
         <activity
-            android:name=".designpatterns.headfirstver2.inheritanceissues.DisadvantagesOfInheritanceActivity"
+            android:name=".oop.abstractmethodvsinheritedmethod.AbstractVsInteritedMethodsActivity"
             android:exported="false" />
-        <activity android:name=".compose.practice.EmptyComposeActivityM3" android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

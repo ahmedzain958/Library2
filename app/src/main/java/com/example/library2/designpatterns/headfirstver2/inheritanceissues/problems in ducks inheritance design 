@@ -13,6 +13,8 @@ code to make sure that rubber duck does nothing in the method when it is called
 What if we got a Decoy duck? How fit the decoy duck into our design?
 quack method will be implemented as it is silent and fly method implemented by the decoy doesn't fly
 
+(What was appropriate for one duck like Mullard/Redhead wasn't necessarily appropriate for another duck like the rubber duck)
+Behavior changes across subclasses and it isn't appropriate to all subclasses to have all behaviors
 problems:
 1- We aren't getting the whole benefits from inheritance
     Flying and quacking get no benefits from inheritance, we don't seem to be using a huge reuse benefits
@@ -20,5 +22,5 @@ problems:
 3- It is hard to gain knowledge of all ducks from looking at the super class, we have to go into each concrete class
     to learn more about what the code does.
 4- A simple change in the super class can lead to unintended side effects to the other ducks (subclasses)
-5- We can't change a particular duck instance at the runtime, all ducks behavior are assigned at the runtime
+5- We can't change a particular duck instance at the runtime, all ducks behavior are assigned at the compile time
     say it is not able to fly if it has been injured or captured
