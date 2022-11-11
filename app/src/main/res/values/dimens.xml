@@ -22,4 +22,5 @@
     <dimen name="tobi_animations_list_type_text_margin_end">12dp</dimen>
     <dimen name="tobi_animations_list_title_text_size">24dp</dimen>
     <dimen name="tobi_animations_list_type_text_size">16dp</dimen>
+    <dimen name="descr_text_size">18sp</dimen>
 </resources>

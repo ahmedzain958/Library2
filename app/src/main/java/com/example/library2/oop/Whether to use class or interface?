@@ -1,0 +1,13 @@
+Whether to use a class or an interface?
+ Strong is-a: a relationship that clearly describes a parent-child relationship
+For example: a student is a person
+Should be modeled using class inheritance
+
+
+ Weak is-a (or is-kind-of): indicates that an object possesses
+a certain property
+ For example: all strings are comparable, all dates are
+comparable
+Should be modeled using interfaces
+ You can also use interfaces to circumvent single inheritance
+restriction if multiple inheritance is desired

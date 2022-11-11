@@ -1,0 +1,15 @@
+Interface: abstraction of a common behavior among set of classes, no need to have a relationship
+
+
+
+
+
+abstract classes :  useful to force all its subclasses to implement that model and when the implementation
+    of the superclass becomes invalid in the subclass
+
+    An object cannot be created from abstract class:
+    An abstract class cannot be instantiated using the new
+    operator.
+    We still define its constructors, which are invoked in the
+    constructors of its subclasses through constructor
+    chaining.

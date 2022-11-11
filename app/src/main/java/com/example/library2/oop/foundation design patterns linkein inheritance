@@ -1,0 +1,8 @@
+inheritance: relationship between classes that allow you to extend the behavior and the property of other classes.
+    code reuse is often touted as the main benefit of inheritance. Typically, you think of one class inheriting from another
+    if they share an IS-A relationship.
+
+Disadvantages:
+    It is easy to overdo inheritance and make it the basis of all your OOD,
+    pay attention when all your classes are IS-A relationship, overusing inheritance will end-up
+    with designs that are inflexible and difficult to change.

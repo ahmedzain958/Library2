@@ -1,0 +1,24 @@
+If we have an abstract super Duck class that has swim, display and quack methods and we have a Mallard and RedHead
+ducks that inherits from the Duck class.
+
+Every OOD could get an unexpected change sooner or later
+
+ Lets assume that we got a request to add another new duck type - a RUBBER duck - your design could be holding up (yatta3atal)
+ when you implement a quack method amd make the Rubber duck squeak.
+
+If we got a feature request to make ducks fly, well now we can leverage inheritance by adding a fly feature/method to the duck class
+Mallard and RedHead ducks can fly but the Rubber duck can't fly, we will fic the issue by overriding the fly method, then adding
+code to make sure that rubber duck does nothing in the method when it is called
+
+What if we got a Decoy duck? How fit the decoy duck into our design?
+quack method will be implemented as it is silent and fly method implemented by the decoy doesn't fly
+
+problems:
+1- We aren't getting the whole benefits from inheritance
+    Flying and quacking get no benefits from inheritance, we don't seem to be using a huge reuse benefits
+2- code duplications: we have code that keeps ducks from quacking or has them making other type of sounds
+3- It is hard to gain knowledge of all ducks from looking at the super class, we have to go into each concrete class
+    to learn more about what the code does.
+4- A simple change in the super class can lead to unintended side effects to the other ducks (subclasses)
+5- We can't change a particular duck instance at the runtime, all ducks behavior are assigned at the runtime
+    say it is not able to fly if it has been injured or captured
