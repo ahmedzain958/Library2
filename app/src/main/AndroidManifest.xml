@@ -77,6 +77,8 @@
         <activity
             android:name=".oop.abstractmethodvsinheritedmethod.AbstractVsInteritedMethodsActivity"
             android:exported="false" />
+        <activity android:name=".designpatterns.headfirstver2.inheritanceissues.DisadvantagesOfInterfaceActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

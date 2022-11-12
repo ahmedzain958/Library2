@@ -1,6 +1,6 @@
 We created a Flyable and quack-able interfaces which every client that quacks or flies implements
 its behavioral interface.
-Disadvantages: - every single duck will implement its own fly and quck method
+Disadvantages: - every single duck will implement its own fly and quack method
 - Worse, if there is any change came up to Flyable or Quack-able and we have 48 duck classes,
  we will go through all the classes and change the implementation
 

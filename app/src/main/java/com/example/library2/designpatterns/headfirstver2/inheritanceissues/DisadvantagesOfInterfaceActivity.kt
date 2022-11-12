@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity
 
 
 
-class DisadvantagesOfInheritanceActivity : AppCompatActivity(), View.OnTouchListener {
+class DisadvantagesOfInterfaceActivity : AppCompatActivity(), View.OnTouchListener {
 
     private val TAG = "Touch"
     private val MIN_ZOOM = 1f
@@ -35,7 +35,7 @@ class DisadvantagesOfInheritanceActivity : AppCompatActivity(), View.OnTouchList
     /** Called when the activity is first created.  */
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(com.example.library2.R.layout.activity_disadvantages_of_inheritance)
+        setContentView(com.example.library2.R.layout.activity_disadvantages_of_interface)
         val view = findViewById<View>(com.example.library2.R.id.imageView2) as ImageView
         view.setOnTouchListener(this)
     }
