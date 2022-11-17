@@ -1,9 +1,9 @@
 package com.example.library2.designpatterns.linkedin.observerpattern
 
-class SimpleObserver: Observer {
-    lateinit var subject: Subject
-    constructor(simpleSubject: Subject){
-        subject = simpleSubject
+class SimpleObserver(var simpleSubject: Subject): Observer {
+    var subject: Subject = simpleSubject
+
+    init {
         subject.registerObserver(this)
     }
     override fun update(valueToPublish: Int) {
