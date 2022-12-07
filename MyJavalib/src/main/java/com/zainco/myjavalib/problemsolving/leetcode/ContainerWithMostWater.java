@@ -1,7 +1,7 @@
 package com.zainco.myjavalib.problemsolving.leetcode;
 
 public class ContainerWithMostWater {
-    public int maxArea(int[] height) {
+    /*public int maxArea(int[] height) {
         int max_area = 0;
         int a_pointer = 0;
         int b_pointer = height.length - 1;
@@ -15,5 +15,5 @@ public class ContainerWithMostWater {
             }
         }
         return max_area;
-    }
+    }*/
 }
