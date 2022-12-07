@@ -16,9 +16,11 @@ class LinkedList<T: Any> {
             return head.toString()
         }
     }
-
+    /*
+    head first insertion
+     */
     fun push(value: T){// insert at the front
-        head = Node(value, next = head)
+        head = Node(value, next = head/*always the next is the current head*/)
         if (tail == null){
             tail = head
         }
