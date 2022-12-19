@@ -20,6 +20,12 @@ class LinkedList<T : Any> {
     fun push(value: T) {// insert at the front
         head = Node(value, next = head)
         if (tail == null) {
+    /*
+    head first insertion
+     */
+    fun push2(value: T){// insert at the front
+        head = Node(value, next = head/*always the next is the current head*/)
+        if (tail == null){
             tail = head
         }
         size++
