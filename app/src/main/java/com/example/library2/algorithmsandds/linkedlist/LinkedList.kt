@@ -18,14 +18,8 @@ class LinkedList<T : Any> {
     }
 
     fun push(value: T) {// insert at the front
-        head = Node(value, next = head)
-        if (tail == null) {
-    /*
-    head first insertion
-     */
-    fun push2(value: T){// insert at the front
         head = Node(value, next = head/*always the next is the current head*/)
-        if (tail == null){
+        if (tail == null) {
             tail = head
         }
         size++
@@ -52,15 +46,15 @@ class LinkedList<T : Any> {
     fun nodeAt(index: Int): Node<T>? {
         var currentNode = head
         var currentIndex = 0
-        while (currentNode != null && currentIndex < index){
+        while (currentNode != null && currentIndex < index) {
             currentNode = currentNode.next
             currentIndex++
         }
         return currentNode
     }
 
-    fun insert(value: T, afterNode: Node<T>): Node<T>{
-        if (tail == afterNode ){//|| index == size-1
+    fun insert(value: T, afterNode: Node<T>): Node<T> {
+        if (tail == afterNode) {//|| index == size-1
             append(value)
             return tail!!
         }
@@ -69,6 +63,7 @@ class LinkedList<T : Any> {
         size++
         return node
     }
+
     fun append(value: T) {
         if (size == 0) {
             head = Node(value, head)
@@ -82,6 +77,4 @@ class LinkedList<T : Any> {
         tail = newTail
         size++
     }
-
-
 }
