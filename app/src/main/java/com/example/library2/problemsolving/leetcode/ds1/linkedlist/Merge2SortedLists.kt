@@ -18,33 +18,33 @@ fun mergeTwoLinkedListsRecursion(l1: ListNode?, l2: ListNode?): ListNode? {
         }
     }
 }
-
+//https://www.youtube.com/watch?v=K63Mjf-H0B0&t=204s
 fun mergeTwoLinkedLists(l1: ListNode?, l2: ListNode?): ListNode? {
-    var result: ListNode? = ListNode(0)
-    var current = result
+    var dummy: ListNode? = ListNode(-1)
+    var head = dummy
 
     var node1 = l1
     var node2 = l2
     while (node1 != null || node2 != null) {
         if (node1 == null) {
-            current?.next = node2
+            dummy?.next = node2
             break
         }
         if (node2 == null) {
-            current?.next = node1
+            dummy?.next = node1
             break
         }
 
         if (node1?.`val` < node2?.`val`) {
-            current?.next = node1
+            dummy?.next = node1
             node1 = node1?.next
         } else {
-            current?.next = node2
+            dummy?.next = node2
             node2 = node2?.next
         }
-        current = current?.next
+        dummy = dummy?.next
     }
-    return result?.next
+    return head?.next // we just put a -1 at the beginning of the list and we don't need it so we will return the head.next
 }
 
 fun main() {

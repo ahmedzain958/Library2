@@ -6,10 +6,12 @@ fun main() {
     linkedList.push(2)
     linkedList.push(3)
     println(linkedList.toString())
+    println("-------------------------")
 
     val linkedList2 = LinkedList<Int>()
     linkedList2.pushChained(1).pushChained(2).pushChained(3)
     println(linkedList2.toString())
+    println("-------------------------")
 
 
     val list = LinkedList<Int>()
@@ -23,6 +25,7 @@ fun main() {
         middleNode = list.insert(-1 * i, middleNode)
     }
     println("After inserting: $list")
+    println("-------------------------")
 
 
     val node1 = Node(value = 1)
@@ -33,4 +36,5 @@ fun main() {
     node2.next = node3
 
     println(node1)
+    println("-------------------------")
 }
