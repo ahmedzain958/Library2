@@ -12,19 +12,21 @@ import com.example.library2.R
 class LottieButtonFragment : Fragment(R.layout.lottie_button_layout) {
 
     private val animationListener = object : Animator.AnimatorListener {
-        override fun onAnimationStart(animation: Animator?) {
+        override fun onAnimationStart(p0: Animator) {
+            TODO("Not yet implemented")
         }
 
-        override fun onAnimationEnd(animation: Animator?) {
+        override fun onAnimationEnd(p0: Animator) {
             lottieFavButton.removeAnimatorListener(this)
             viewModel.setAnimationInactive()
         }
 
-        override fun onAnimationCancel(animation: Animator?) {
-
+        override fun onAnimationCancel(p0: Animator) {
         }
 
-        override fun onAnimationRepeat(animation: Animator?) {}
+        override fun onAnimationRepeat(p0: Animator) {
+            TODO("Not yet implemented")
+        }
     }
 
     private val viewModel by viewModels<LottieButtonViewModel>()
