@@ -1,7 +1,7 @@
 package com.example.library2.algorithmsandds.linkedlist
 
 fun main() {
-   /* val linkedList = LinkedList<Int>()
+    val linkedList = LinkedList<Int>()
     linkedList.push(1)
     linkedList.push(2)
     linkedList.push(3)
@@ -25,7 +25,6 @@ fun main() {
     println("After inserting: $list")
 
 
-*/
     val node1 = Node(value = 1)
     val node2 = Node(value = 2)
     val node3 = Node(value = 3)
