@@ -1,5 +1,5 @@
 package com.example.library2.algorithmsandds.linkedlist
-
+//https://www.kodeco.com/books/data-structures-algorithms-in-kotlin/v1.0/chapters/3-linked-list
 class LinkedList<T : Any> {
     private var head: Node<T>? = null
     private var tail: Node<T>? = null
@@ -17,7 +17,7 @@ class LinkedList<T : Any> {
         }
     }
 
-    fun push(value: T) {// insert at the front
+    fun push(value: T) {// insert at the front / called head-first insertion
         head = Node(value, next = head/*always the next is the current head*/)
         if (tail == null) {
             tail = head
@@ -25,7 +25,7 @@ class LinkedList<T : Any> {
         size++
     }
 
-    fun pushChained(value: T): LinkedList<T> {// insert at the front
+    fun pushChained(value: T): LinkedList<T> {// insert at the front using fluent builder pattern
         head = Node(value, next = head)
         if (tail == null) {
             tail = head
