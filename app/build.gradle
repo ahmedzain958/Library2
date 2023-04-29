@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
     id 'kotlin-kapt'
-    id 'dagger.hilt.android.plugin'
+//    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -49,12 +49,9 @@ android {
     }
     buildFeatures{
         dataBinding true
-        compose true
         viewBinding true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion '1.1.1'
-    }
+
     packagingOptions {
         resources {
             excludes += '/META-INF/{AL2.0,LGPL2.1}'
@@ -71,12 +68,8 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
     implementation 'com.google.android.material:material:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
-    implementation 'androidx.activity:activity-compose:1.6.1'
-    implementation "androidx.compose.ui:ui:$compose_version"
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
     implementation 'androidx.navigation:navigation-fragment-ktx:2.5.3'
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
-    implementation 'androidx.compose.material3:material3:1.1.0-alpha03'
 
 
     testImplementation 'junit:junit:4.12'
@@ -93,9 +86,6 @@ dependencies {
     // Room components
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
     kapt "org.xerial:sqlite-jdbc:3.34.0"
     kapt "androidx.room:room-compiler:$rootProject.roomVersion"
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
@@ -117,8 +107,8 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.4.0'
     implementation 'androidx.fragment:fragment-ktx:1.5.3'
 
-    implementation "com.google.dagger:hilt-android:$dagger_hilt_version"
-    kapt "com.google.dagger:hilt-compiler:$dagger_hilt_version"
+//    implementation "com.google.dagger:hilt-android:$dagger_hilt_version"
+//    kapt "com.google.dagger:hilt-compiler:$dagger_hilt_version"
     kapt 'androidx.hilt:hilt-compiler:1.0.0'
 
 

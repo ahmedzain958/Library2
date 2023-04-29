@@ -1,7 +1,7 @@
 package com.example.library2.problemsolving.leetcode.ds1.linkedlist
 
 
-
+/*
 fun mergeTwoLinkedListsRecursion(l1: ListNode?, l2: ListNode?): ListNode? {
     if (l1 == null) return l2
     if (l2 == null) return l1
@@ -14,9 +14,9 @@ fun mergeTwoLinkedListsRecursion(l1: ListNode?, l2: ListNode?): ListNode? {
             next = mergeTwoLinkedListsRecursion(l1, next)
         }
     }
-}
+}*/
 //https://www.youtube.com/watch?v=K63Mjf-H0B0&t=204s
-fun mergeTwoLinkedLists(l1: ListNode?, l2: ListNode?): ListNode? {
+/*fun mergeTwoLinkedLists(l1: ListNode?, l2: ListNode?): ListNode? {
     var dummy: ListNode? = ListNode(-1)
     var head = dummy
 
@@ -42,8 +42,9 @@ fun mergeTwoLinkedLists(l1: ListNode?, l2: ListNode?): ListNode? {
         dummy = dummy?.next
     }
     return head?.next // we just put a -1 at the beginning of the list and we don't need it so we will return the head.next
-}
+}*/
 
+/*
 fun main() {
     val list1: ListNode = ListNode(1)
     list1.next = ListNode(2)
@@ -55,4 +56,4 @@ fun main() {
 
     val x = mergeTwoLinkedLists(list1, list2)
     println(x?.next)
-}
+}*/
