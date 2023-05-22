@@ -27,4 +27,57 @@
     <color name="todoOverDue">#e65100</color>
 
     <color name="todoDone">#64b5f6</color>
+
+
+
+
+
+
+
+
+    <color name="white100">#ffffff</color>
+    <color name="white90">#FDFDFD</color>
+    <color name="light_black">#1C1C1C</color>
+    <color name="transparent">#00FFFFFF</color>
+    <!--    <color name="light_green">#b49164</color>-->
+    <color name="green">#008D50</color>
+    <color name="white_gray">#D6D6D6</color>
+    <color name="lightGray">#dfdfdf</color>
+    <color name="lightGray2">#BEBEBE</color>
+    <color name="lightGray3">#C8C9CA</color>
+    <color name="lightGray4">#D8DADB</color>
+    <color name="darkGray">#7D7D7D</color>
+    <color name="darkGray2">#5D5D5D</color>
+    <color name="darkGray3">#5B5F62</color>
+    <color name="red">#E34037</color>
+    <color name="orange">#e67e22</color>
+    <color name="hyperlink_blue">#5454ff</color>
+
+    <color name="light_brown">#c7ad8b</color>
+    <color name="light_brown40">#d9c7b1</color>
+    <color name="light_brown5">#ece3d8</color>
+
+    <color name="color_dark_text">#23282D</color>
+
+
+
+    <color name="grey_background">#FAFAFA</color>
+
+    <color name="grey_text_light_grey">#7D7D7D</color>
+    <color name="primaryColor">#b49164</color>
+    <color name="primaryLightColor">#c7ad8b</color>
+    <color name="new_main_services_header_color">#ece3d8</color>
+    <color name="grey_100">#F5F5F5</color>
+
+    <color name="red40">#fdeded</color>
+
+    <color name="blue_black">#23282d</color>
+    <color name="grey_subtitle">#5b5f62</color>
+    <color name="keppel">#3CB496</color>
+    <color name="yellow_orange">#FF9501</color>
+    <color name="cinnabar">#E34037</color>
+    <color name="filter_frame">#D8DADB</color>
+    <color name="chinese_silver">#C8C9CA</color>
+    <color name="charleston_green_opacity_60">#9923282D</color>
+    <color name="cultured">#f8f8f8</color>
 </resources>
