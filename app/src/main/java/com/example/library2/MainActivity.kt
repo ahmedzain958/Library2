@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.library2.common.CommonList
 //import com.example.library2.compose.ComposeActivity
 import com.example.library2.concurrentprogramming.ConcurrentProgrammingActivity
+import com.example.library2.coroutines_channels.CoroutinesChannelActivity
 import com.example.library2.designpatterns.DesignPatternsActivity
 import com.example.library2.lifecycleawarecomp.LifeCycleAwareCompActivity
 import com.example.library2.oop.OOPActivity
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
             "Design Patterns" to DesignPatternsActivity::class.java,
             "OOP" to OOPActivity::class.java,
             "Livedata vs stateflow" to LifeCycleAwareCompActivity::class.java,
+            "Channels in coroutinse" to CoroutinesChannelActivity::class.java,
         )
 
         val commonList = findViewById<CommonList>(R.id.commonList)
