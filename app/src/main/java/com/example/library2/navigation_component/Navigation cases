@@ -1,0 +1,19 @@
+ELM: I have a settings fragment with spagetti java and no navigation controller set for the fragment inside the spaggetti
+solution create an activity to navigate to from inside the settings fragment
+
+
+constraintFAQ.setOnClickListener(v -> startActivity(new Intent((MainActivity)getActivity(), FAQActivity.class)));
+
+ inside the activity create a navigation host to add a fragment
+ fragment included inside a new navigation graph
+
+
+ this code will be inside the new activity
+
+ val navHostFragment =
+     supportFragmentManager.findFragmentById(R.id.nav_host_faq) as NavHostFragment
+ val inflater: NavInflater = navHostFragment.navController.navInflater
+ val graph = inflater.inflate(R.navigation.faq_navigation_graph)
+
+ navHostFragment.navController.graph = graph
+ navController = navHostFragment.navController
