@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".coroutines_channels.CoroutinesChannelActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".lifecycleawarecomp.LifeCycleAwareCompActivity"
             android:exported="false" />

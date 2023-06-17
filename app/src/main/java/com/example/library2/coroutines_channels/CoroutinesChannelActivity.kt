@@ -13,7 +13,31 @@ class CoroutinesChannelActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_coroutines_channel)
+        //waits for sending & receiving (suspends)
+        executeChannelSend()
+        //dont wait for sending & receiving (No suspends)
+        executeChannelTrySend()
 
+    }
+
+    private fun executeChannelTrySend() {
+        val channel = Channel<Char>()
+        val charList = arrayOf('A', 'B', 'C', 'D') //this array will be sent from one coroutine to another
+        runBlocking {
+            launch {
+                for (char in charList){
+                    channel.trySend(char)
+                }
+            }
+            launch {
+                for (char in channel){//smart enough to receive then wait a second of the delay
+                    Log.d("here", char.toString())
+                }
+            }
+        }
+    }
+
+    private fun executeChannelSend() {
         val channel = Channel<Char>()
         val charList = arrayOf('A', 'B', 'C', 'D') //this array will be sent from one coroutine to another
         runBlocking {
