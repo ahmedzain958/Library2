@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".googlelibraries.SafetyNetRecaptchaActivity"
+            android:exported="false" />
+        <activity
             android:name=".coroutines_channels.CoroutinesChannelActivity"
             android:exported="true" />
         <activity
@@ -112,7 +115,7 @@
         <activity
             android:name=".designpatterns.linkedin.adapterpattern.AdapterPatternLinkedInActivity"
             android:exported="false" />
-        <activity android:name="com.example.library2.views.recyclerview_expandable.ExpandableRecyclerActivity" />
+        <activity android:name=".views.recyclerview_expandable.ExpandableRecyclerActivity" />
     </application>
 
 </manifest>
