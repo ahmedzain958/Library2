@@ -3,11 +3,13 @@ package com.example.library2.coroutines_channels
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.lifecycle.lifecycleScope
 import com.example.library2.R
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
+import kotlin.math.log
 
 class CoroutinesChannelActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,6 +20,17 @@ class CoroutinesChannelActivity : AppCompatActivity() {
         //dont wait for sending & receiving (No suspends)
         executeChannelTrySend()
 
+        //radezvous channel
+        //producer
+        val channel = Channel<Language>()
+        lifecycleScope.launch {
+            channel.send(Language.ARABIC)
+            channel.send(Language.ENGLISH)
+        }
+        lifecycleScope.launch {
+            Log.d("CoroutinesChannel", channel.receive().toString())
+            Log.d("CoroutinesChannel", channel.receive().toString())
+        }
     }
 
     private fun executeChannelTrySend() {
@@ -53,5 +66,11 @@ class CoroutinesChannelActivity : AppCompatActivity() {
                 }
             }
         }
+    }
+    enum class Language{
+        ENGLISH,
+        ARABIC,
+        FRENCH,
+        GERMANY
     }
 }
