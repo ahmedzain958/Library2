@@ -12,4 +12,5 @@ class SafetyNetRecaptchaActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_safety_net_recaptcha)
     }
+        val map: Map<String, Int> = mutableMapOf<String, Int>()
 }

@@ -7,6 +7,7 @@ import com.example.library2.common.CommonList
 import com.example.library2.concurrentprogramming.ConcurrentProgrammingActivity
 import com.example.library2.coroutines_channels.CoroutinesChannelActivity
 import com.example.library2.designpatterns.DesignPatternsActivity
+import com.example.library2.googlelibraries.RecaptchaGoogleActivity
 import com.example.library2.googlelibraries.SafetyNetRecaptchaActivity
 import com.example.library2.lifecycleawarecomp.LifeCycleAwareCompActivity
 import com.example.library2.oop.OOPActivity
@@ -27,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             "Livedata vs stateflow" to LifeCycleAwareCompActivity::class.java,
             "Channels in coroutinse" to CoroutinesChannelActivity::class.java,
             "Google Libraries" to SafetyNetRecaptchaActivity::class.java,
+            "Recaptcha Google Libraries" to RecaptchaGoogleActivity::class.java,
         )
 
         val commonList = findViewById<CommonList>(R.id.commonList)
