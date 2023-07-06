@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".coroutines_channels.ChannelsActivity"
+            android:exported="false" />
+        <activity
             android:name=".googlelibraries.RecaptchaGoogleActivity"
             android:exported="false" />
         <activity
@@ -19,13 +22,13 @@
             android:exported="false" />
         <activity
             android:name=".coroutines_channels.CoroutinesChannelActivity"
-            android:exported="true" />
+            android:exported="false" />
         <activity
             android:name=".lifecycleawarecomp.LifeCycleAwareCompActivity"
             android:exported="false" />
         <activity
             android:name=".concurrentprogramming.coroutines.nerds.DeferredActivity"
-            android:exported="true">
+            android:exported="false">
 
             <!--
             <intent-filter>

@@ -22,15 +22,7 @@ class CoroutinesChannelActivity : AppCompatActivity() {
 
         //radezvous channel
         //producer
-        val channel = Channel<Language>()
-        lifecycleScope.launch {
-            channel.send(Language.ARABIC)
-            channel.send(Language.ENGLISH)
-        }
-        lifecycleScope.launch {
-            Log.d("CoroutinesChannel", channel.receive().toString())
-            Log.d("CoroutinesChannel", channel.receive().toString())
-        }
+
     }
 
     private fun executeChannelTrySend() {
@@ -67,10 +59,5 @@ class CoroutinesChannelActivity : AppCompatActivity() {
             }
         }
     }
-    enum class Language{
-        ENGLISH,
-        ARABIC,
-        FRENCH,
-        GERMANY
-    }
+
 }
