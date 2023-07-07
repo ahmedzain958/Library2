@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".coroutines_channels.ChannelsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".googlelibraries.RecaptchaGoogleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".googlelibraries.SafetyNetRecaptchaActivity"
+            android:exported="false" />
+        <activity
             android:name=".coroutines_channels.CoroutinesChannelActivity"
             android:exported="false" />
         <activity
@@ -19,7 +28,7 @@
             android:exported="false" />
         <activity
             android:name=".concurrentprogramming.coroutines.nerds.DeferredActivity"
-            android:exported="true">
+            android:exported="false">
 
             <!--
             <intent-filter>
@@ -112,6 +121,7 @@
         <activity
             android:name=".designpatterns.linkedin.adapterpattern.AdapterPatternLinkedInActivity"
             android:exported="false" />
+        <activity android:name=".views.recyclerview_expandable.ExpandableRecyclerActivity" />
     </application>
 
 </manifest>
