@@ -7,6 +7,7 @@ import com.example.library2.common.CommonList
 import com.example.library2.concurrentprogramming.ConcurrentProgrammingActivity
 import com.example.library2.coroutines_channels.ChannelsActivity
 import com.example.library2.coroutines_channels.CoroutinesChannelActivity
+import com.example.library2.coroutines_flows.FlowsPhilipActivity
 import com.example.library2.designpatterns.DesignPatternsActivity
 import com.example.library2.googlelibraries.RecaptchaGoogleActivity
 import com.example.library2.googlelibraries.SafetyNetRecaptchaActivity
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity() {
             "Channels" to ChannelsActivity::class.java,
             "Google Libraries" to SafetyNetRecaptchaActivity::class.java,
             "Recaptcha Google Libraries" to RecaptchaGoogleActivity::class.java,
+            "FlowsPhilipActivity" to FlowsPhilipActivity::class.java,
         )
 
         val commonList = findViewById<CommonList>(R.id.commonList)
