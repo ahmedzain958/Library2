@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.library2.common.CommonList
 //import com.example.library2.compose.ComposeActivity
 import com.example.library2.concurrentprogramming.ConcurrentProgrammingActivity
+import com.example.library2.concurrentprogramming.flows.nerds.NormalFlowBuilderActivity
 import com.example.library2.coroutines_channels.ChannelsActivity
 import com.example.library2.coroutines_channels.CoroutinesChannelActivity
 import com.example.library2.coroutines_flows.FlowsPhilipActivity
@@ -33,6 +34,7 @@ class MainActivity : AppCompatActivity() {
             "Google Libraries" to SafetyNetRecaptchaActivity::class.java,
             "Recaptcha Google Libraries" to RecaptchaGoogleActivity::class.java,
             "FlowsPhilipActivity" to FlowsPhilipActivity::class.java,
+            "NormalFlowBuilderActivity" to NormalFlowBuilderActivity::class.java,
         )
 
         val commonList = findViewById<CommonList>(R.id.commonList)

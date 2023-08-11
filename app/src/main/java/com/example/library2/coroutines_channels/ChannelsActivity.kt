@@ -103,14 +103,16 @@ class ChannelsActivity : AppCompatActivity() {
     ) {
         Log.d(
             "CoroutinesChannel",
-            "ReceiveChannel = - isClosed= " + channelTobeListenedAndClosedAutomatically.isClosedForReceive.toString()
+            "ReceiveChannel = - isClosed= " + channelTobeListenedAndClosedAutomatically
+                .isClosedForReceive.toString()
         )
         channelTobeListenedAndClosedAutomatically.consumeEach {
             Log.d("CoroutinesChannel", "ReceiveChannel = " + it.name)
         }
         Log.d(
             "CoroutinesChannel",
-            "ReceiveChannel = - isClosed= " + channelTobeListenedAndClosedAutomatically.isClosedForReceive.toString()
+            "ReceiveChannel = - isClosed= " + channelTobeListenedAndClosedAutomatically
+                .isClosedForReceive.toString()
         )
         Log.d("CoroutinesChannel", "-----------------------")
     }
