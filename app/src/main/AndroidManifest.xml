@@ -12,7 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".concurrentprogramming.flows.nerds.NormalFlowBuilderActivity"
+            android:name=".concurrentprogramming.coroutines.nerds.CoroutineBuilderComponentsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".concurrentprogramming.flows.nerds.CollectorConfirmsFlowEmissionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".concurrentprogramming.flows.nerds.CollectCalledFromSuspend_NoEmissionWithoutCollect_Activity"
             android:exported="false" />
         <activity
             android:name=".coroutines_flows.FlowsPhilipActivity"
