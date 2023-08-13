@@ -19,7 +19,8 @@ class ConcurrentProgrammingActivity : AppCompatActivity() {
             "CoroutineBuilderComponentsActivity" to CoroutineBuilderComponentsActivity::class.java,
             "CollectorConfirmsFlowEmissionActivity" to CollectorConfirmsFlowEmissionActivity::class.java,
             "FlowsPhilipActivity" to FlowsPhilipActivity::class.java,
-            "NormalFlowBuilderActivity" to CollectCalledFromSuspend_NoEmissionWithoutCollect_Activity::class.java,
+            "CollectCalledFromSuspend_NoEmissionWithoutCollect_Activity" to CollectCalledFromSuspend_NoEmissionWithoutCollect_Activity::class.java,
+            "CoroutineBuilderComponentsActivity" to CoroutineBuilderComponentsActivity::class.java,
 
         )
         val commonList = findViewById<CommonList>(R.id.commonList)
