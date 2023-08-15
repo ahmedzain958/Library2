@@ -42,7 +42,7 @@ class InputSurveyFragment : Fragment() {
         binding.buttonMultiplechoice.setOnClickListener {
 
         }
-        binding.buttonSameinstance.setOnClickListener {
+        binding.buttonSameInstance.setOnClickListener {
 
         }
     }

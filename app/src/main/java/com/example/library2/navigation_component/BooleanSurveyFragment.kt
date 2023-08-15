@@ -5,9 +5,12 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavArgs
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.example.library2.R
 import com.example.library2.databinding.FragmentSurveyBooleanBinding
 
 /**
@@ -29,9 +32,9 @@ class BooleanSurveyFragment : Fragment() {
 
     }
 
-    val args: NavArgs by navArgs()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val navController = findNavController()
         val answer = arguments?.getParcelable("answer") as Answer?
         binding.textviewFirst.text = answer?.questionValue.toString()
         binding.buttonSatisfaction.setOnClickListener {
@@ -43,8 +46,10 @@ class BooleanSurveyFragment : Fragment() {
         binding.buttonMultiplechoice.setOnClickListener {
 
         }
-        binding.buttonSameinstance.setOnClickListener {
-
+        binding.buttonSameInstance.setOnClickListener {
+            val answer = Answer(2, "inside boolean")
+            val bundle = bundleOf("answer" to answer)
+            navController.navigate(R.id.action_to_booleanSurveyFragment, bundle)
         }
     }
 

@@ -44,7 +44,7 @@
         app:layout_constraintTop_toBottomOf="@id/button_multiplechoice" />
 
     <Button
-        android:id="@+id/button_sameinstance"
+        android:id="@+id/button_same_instance"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="To Same Instance Fragment"

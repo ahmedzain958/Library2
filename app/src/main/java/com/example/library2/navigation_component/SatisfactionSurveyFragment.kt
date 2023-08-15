@@ -1,16 +1,13 @@
 package com.example.library2.navigation_component
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.library2.R
-import com.example.library2.SurveyNavGraphDirections
 import com.example.library2.databinding.FragmentSurveySatisfactionBinding
 
 /**
@@ -30,11 +27,14 @@ class SatisfactionSurveyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val navController = findNavController()
+         val navController = findNavController()
+        val answer = arguments?.getParcelable("answer") as Answer?
+        binding.textviewFirst.text = answer?.questionValue.toString() ?: ""
+
         binding.buttonBoolean.setOnClickListener {
             val answer = Answer(1, "2")
             val bundle = bundleOf("answer" to answer)
-            view.findNavController().navigate(R.id.action_to_booleanSurveyFragment, bundle)
+            navController.navigate(R.id.action_to_booleanSurveyFragment, bundle)
 //            navController.navigate(action)
         }
         binding.buttonInput.setOnClickListener {
@@ -43,8 +43,10 @@ class SatisfactionSurveyFragment : Fragment() {
         binding.buttonMultiplechoice.setOnClickListener {
 
         }
-        binding.buttonSameinstance.setOnClickListener {
-
+        binding.buttonSameInstance.setOnClickListener {
+            val answer = Answer(1, "2")
+            val bundle = bundleOf("answer" to answer)
+            navController.navigate(R.id.action_to_satisfactionSurveyFragment, bundle)
         }
     }
 

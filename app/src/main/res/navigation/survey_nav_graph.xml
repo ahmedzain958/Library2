@@ -6,9 +6,9 @@
     <action
         android:id="@+id/action_to_satisfactionSurveyFragment"
         app:destination="@id/satisfactionSurveyFragment">
-        <argument
+      <!--  <argument
             android:name="answer"
-            app:argType="com.example.library2.navigation_component.Answer" />
+            app:argType="com.example.library2.navigation_component.Answer" />-->
     </action>
     <action
         android:id="@+id/action_to_booleanSurveyFragment"
