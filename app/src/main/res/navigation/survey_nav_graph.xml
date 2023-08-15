@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/survey_nav_graph"
+    app:startDestination="@id/satisfactionSurveyFragment">
+    <fragment
+        android:id="@+id/satisfactionSurveyFragment"
+        android:name="com.example.library2.navigation_component.SatisfactionSurveyFragment"
+        android:label="SatisfactionSurveyFragment" />
+    <fragment
+        android:id="@+id/booleanSurveyFragment"
+        android:name="com.example.library2.navigation_component.BooleanSurveyFragment"
+        android:label="BooleanSurveyFragment" />
+    <fragment
+        android:id="@+id/multipleChoicesSurveyFragment"
+        android:name="com.example.library2.navigation_component.MultipleChoicesSurveyFragment"
+        android:label="MultipleChoicesSurveyFragment" />
+    <fragment
+        android:id="@+id/inputSurveyFragment"
+        android:name="com.example.library2.navigation_component.InputSurveyFragment"
+        android:label="InputSurveyFragment" />
+
+</navigation>
