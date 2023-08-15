@@ -6,6 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavArgs
+import androidx.navigation.fragment.navArgs
 import com.example.library2.databinding.FragmentSurveyBooleanBinding
 
 /**
@@ -14,9 +16,6 @@ import com.example.library2.databinding.FragmentSurveyBooleanBinding
 class BooleanSurveyFragment : Fragment() {
 
     private var _binding: FragmentSurveyBooleanBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -30,9 +29,11 @@ class BooleanSurveyFragment : Fragment() {
 
     }
 
+    val args: NavArgs by navArgs()
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d("first_fra", "onViewCreated() called")
+        val answer = arguments?.getParcelable("answer") as Answer?
+        binding.textviewFirst.text = answer?.questionValue.toString()
         binding.buttonSatisfaction.setOnClickListener {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }

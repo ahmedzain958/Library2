@@ -7,16 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.library2.databinding.FragmentSurveyMultipleChoicesBinding
-
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class MultipleChoicesSurveyFragment : Fragment() {
 
     private var _binding: FragmentSurveyMultipleChoicesBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -25,14 +18,12 @@ class MultipleChoicesSurveyFragment : Fragment() {
     ): View? {
 
         _binding = FragmentSurveyMultipleChoicesBinding.inflate(inflater, container, false)
-        Log.d("first_fra", "onCreateView() called")
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d("first_fra", "onViewCreated() called")
         binding.buttonBoolean.setOnClickListener {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
@@ -49,12 +40,10 @@ class MultipleChoicesSurveyFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        Log.d("first_fra", "onDestroyView() called")
         _binding = null
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("first_fra", "onDestroy() called")
     }
 }

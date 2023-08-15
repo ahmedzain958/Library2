@@ -3,6 +3,34 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/survey_nav_graph"
     app:startDestination="@id/satisfactionSurveyFragment">
+    <action
+        android:id="@+id/action_to_satisfactionSurveyFragment"
+        app:destination="@id/satisfactionSurveyFragment">
+        <argument
+            android:name="answer"
+            app:argType="com.example.library2.navigation_component.Answer" />
+    </action>
+    <action
+        android:id="@+id/action_to_booleanSurveyFragment"
+        app:destination="@id/booleanSurveyFragment">
+      <!--  <argument
+            android:name="answer"
+            app:argType="com.example.library2.navigation_component.Answer" />-->
+    </action>
+    <action
+        android:id="@+id/action_to_multipleChoiceSurveyFragment"
+        app:destination="@id/multipleChoicesSurveyFragment">
+        <argument
+            android:name="answer"
+            app:argType="com.example.library2.navigation_component.Answer" />
+    </action>
+    <action
+        android:id="@+id/action_to_inputSurveyFragment"
+        app:destination="@id/inputSurveyFragment">
+        <argument
+            android:name="answer"
+            app:argType="com.example.library2.navigation_component.Answer" />
+    </action>
     <fragment
         android:id="@+id/satisfactionSurveyFragment"
         android:name="com.example.library2.navigation_component.SatisfactionSurveyFragment"

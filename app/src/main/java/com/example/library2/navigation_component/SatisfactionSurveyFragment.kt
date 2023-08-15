@@ -2,41 +2,40 @@ package com.example.library2.navigation_component
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.example.library2.R
+import com.example.library2.SurveyNavGraphDirections
 import com.example.library2.databinding.FragmentSurveySatisfactionBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class SatisfactionSurveyFragment : Fragment() {
-
     private var _binding: FragmentSurveySatisfactionBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View? {
-
         _binding = FragmentSurveySatisfactionBinding.inflate(inflater, container, false)
-        Log.d("first_fra", "onCreateView() called")
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        Log.d("first_fra", "onViewCreated() called")
+        val navController = findNavController()
         binding.buttonBoolean.setOnClickListener {
-//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+            val answer = Answer(1, "2")
+            val bundle = bundleOf("answer" to answer)
+            view.findNavController().navigate(R.id.action_to_booleanSurveyFragment, bundle)
+//            navController.navigate(action)
         }
         binding.buttonInput.setOnClickListener {
 
@@ -51,12 +50,10 @@ class SatisfactionSurveyFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        Log.d("first_fra", "onDestroyView() called")
         _binding = null
     }
 
     override fun onDestroy() {
         super.onDestroy()
-        Log.d("first_fra", "onDestroy() called")
     }
 }
