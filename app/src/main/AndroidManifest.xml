@@ -30,6 +30,9 @@
             android:name=".coroutines_flows.FlowsPhilipActivity"
             android:exported="false" />
         <activity
+            android:name=".views.ToastActivity"
+            android:exported="false" />
+        <activity
             android:name=".coroutines_channels.ChannelsActivity"
             android:exported="false" />
         <activity
