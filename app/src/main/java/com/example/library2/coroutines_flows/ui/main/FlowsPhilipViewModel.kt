@@ -22,13 +22,12 @@ class FlowsPhilipViewModel : ViewModel() {
         }
     }
 
-    /*init {
+    fun collectFlow(){
         viewModelScope.launch {
-            countDownFlow.collectLatest {
+            countDownFlow.collect {
                 delay(1500)
-                Log.d("FlowsPhilipFragment", "timer = $it")
+                Log.d("Zainco", "timer = $it")
             }
         }
     }
-*/
 }

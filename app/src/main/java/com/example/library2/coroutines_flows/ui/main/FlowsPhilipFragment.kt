@@ -36,8 +36,6 @@ class FlowsPhilipFragment : Fragment() {
     ): View {
         val view = inflater.inflate(R.layout.fragment_flows_philip, container, false)
         lifecycleScope.launch {
-
-
             //collect latest example
             viewModel.countDownFlow.filter { it % 2 == 0 }
                 .onEach {
@@ -50,6 +48,7 @@ class FlowsPhilipFragment : Fragment() {
                     Log.d("FlowsPhilipFragment", "timer = $it")
                 }
         }
+        viewModel.collectFlow()
         return view
     }
 
