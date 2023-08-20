@@ -12,14 +12,13 @@ import java.math.BigInteger
 
 fun main(args: Array<String>) {
     runBlocking {
+        val startTime = System.currentTimeMillis()
         launch {
             calculateFactorialOf(5).collect {// using collect in the flow is similar to using foreach in collections
-                printWithTimePassed(it, startTime = System.currentTimeMillis())
+                printWithTimePassed(it, startTime =startTime)
             }
         }
     }
-
-
 }
 
 private fun calculateFactorialOf(number: Int): Flow<BigInteger> = flow {
