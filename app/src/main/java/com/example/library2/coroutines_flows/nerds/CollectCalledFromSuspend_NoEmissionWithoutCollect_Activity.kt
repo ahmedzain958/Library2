@@ -1,4 +1,4 @@
-package com.example.library2.concurrentprogramming.flows.nerds
+package com.example.library2.coroutines_flows.nerds
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

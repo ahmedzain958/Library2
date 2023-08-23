@@ -6,9 +6,10 @@ import com.example.library2.R
 import com.example.library2.common.CommonList
 import com.example.library2.concurrentprogramming.coroutines.CoroutinesExceptionActivity
 import com.example.library2.concurrentprogramming.coroutines.nerds.CoroutineBuilderComponentsActivity
-import com.example.library2.concurrentprogramming.flows.nerds.CollectorConfirmsFlowEmissionActivity
-import com.example.library2.concurrentprogramming.flows.nerds.CollectCalledFromSuspend_NoEmissionWithoutCollect_Activity
+import com.example.library2.coroutines_flows.nerds.CollectorConfirmsFlowEmissionActivity
+import com.example.library2.coroutines_flows.nerds.CollectCalledFromSuspend_NoEmissionWithoutCollect_Activity
 import com.example.library2.coroutines_flows.FlowsPhilipActivity
+import com.example.library2.coroutines_flows.nerds.ZipFlowsActivity
 
 class ConcurrentProgrammingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +22,7 @@ class ConcurrentProgrammingActivity : AppCompatActivity() {
             "FlowsPhilipActivity" to FlowsPhilipActivity::class.java,
             "CollectCalledFromSuspend_NoEmissionWithoutCollect_Activity" to CollectCalledFromSuspend_NoEmissionWithoutCollect_Activity::class.java,
             "CoroutineBuilderComponentsActivity" to CoroutineBuilderComponentsActivity::class.java,
+            "ZipFlowsActivity" to ZipFlowsActivity::class.java,
 
         )
         val commonList = findViewById<CommonList>(R.id.commonList)

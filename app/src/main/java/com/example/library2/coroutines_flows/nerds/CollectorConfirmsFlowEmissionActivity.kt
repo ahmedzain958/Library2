@@ -1,10 +1,11 @@
-package com.example.library2.concurrentprogramming.flows.nerds
+package com.example.library2.coroutines_flows.nerds
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import com.example.library2.R
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.buffer
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.flow
@@ -20,15 +21,15 @@ class CollectorConfirmsFlowEmissionActivity : AppCompatActivity() {
             /*(1)Producer*/ flow<Int> {
             for (i in 0 until 11) {
                 emit(i)
-                Log.d("here producer", i.toString())
-                delay(100)
+                delay(1000)
             }
         }
             /*(2)intermediate*/.filter { i ->
                 i < 5 //same as for condition
-            }
-            /*(3)Collector*/.collect {
-                Log.d("here collector", it.toString())
+            }.buffer()
+            /*(3)Collector*/.collect {/*collector executed before producer, in other words producer doesn't work until collector*/
+                delay(2000)
+                Log.d("here collector ad", it.toString())
             }
         }
         /////////////////////////////////////////////////////////////////////////////////
