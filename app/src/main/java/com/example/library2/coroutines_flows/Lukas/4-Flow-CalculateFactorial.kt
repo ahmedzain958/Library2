@@ -4,6 +4,7 @@ import com.example.library2.utils.printWithTimePassed
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.buffer
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.flowOn
 import kotlinx.coroutines.launch
@@ -14,7 +15,7 @@ fun main(args: Array<String>) {
     runBlocking {
         val startTime = System.currentTimeMillis()
         launch {
-            calculateFactorialOf(5).collect {// using collect in the flow is similar to using foreach in collections
+            calculateFactorialOf(5).buffer().collect {// using collect in the flow is similar to using foreach in collections
                 printWithTimePassed(it, startTime =startTime)
             }
         }

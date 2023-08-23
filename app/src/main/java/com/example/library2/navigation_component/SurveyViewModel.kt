@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.asFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.collectLatest
@@ -117,8 +118,9 @@ class SurveyViewModel : ViewModel() {
   Boolean  >>  type_id >> 5
  >>>>  Yes (1) / No (0)
  */
-    fun getQuestionsList(): Flow<List<Question>> {
-        return flow { questionsList }
+    fun getQuestionsList(): Flow<Question> {
+        val flow = questionsList.asFlow()
+        return flow
     }
 
     sealed class UiState {

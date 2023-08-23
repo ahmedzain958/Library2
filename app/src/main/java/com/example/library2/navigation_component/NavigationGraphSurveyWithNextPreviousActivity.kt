@@ -36,7 +36,7 @@ class NavigationGraphSurveyWithNextPreviousActivity : AppCompatActivity() {
         lifecycleScope.launch{
             repeatOnLifecycle(Lifecycle.State.STARTED){
                 surveyViewModel.getQuestionsList().collect{
-                    Log.d("zainco", "first question $it")
+                    Log.d("zainco", "$it")
                 }
             }
         }
