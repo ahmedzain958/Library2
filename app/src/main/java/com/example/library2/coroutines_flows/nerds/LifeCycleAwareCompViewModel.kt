@@ -1,4 +1,4 @@
-package com.example.library2.lifecycleawarecomp
+package com.example.library2.coroutines_flows.nerds
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

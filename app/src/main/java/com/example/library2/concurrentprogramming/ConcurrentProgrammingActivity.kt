@@ -10,6 +10,7 @@ import com.example.library2.coroutines_flows.nerds.CollectorConfirmsFlowEmission
 import com.example.library2.coroutines_flows.nerds.CollectCalledFromSuspend_NoEmissionWithoutCollect_Activity
 import com.example.library2.coroutines_flows.FlowsPhilipActivity
 import com.example.library2.coroutines_flows.nerds.ZipFlowsActivity
+import com.example.library2.coroutines_flows.nerds.LiveDataVsStateFlowActivity
 
 class ConcurrentProgrammingActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,7 +24,7 @@ class ConcurrentProgrammingActivity : AppCompatActivity() {
             "CollectCalledFromSuspend_NoEmissionWithoutCollect_Activity" to CollectCalledFromSuspend_NoEmissionWithoutCollect_Activity::class.java,
             "CoroutineBuilderComponentsActivity" to CoroutineBuilderComponentsActivity::class.java,
             "ZipFlowsActivity" to ZipFlowsActivity::class.java,
-
+            "Livedata vs stateflow" to LiveDataVsStateFlowActivity::class.java,
         )
         val commonList = findViewById<CommonList>(R.id.commonList)
 

@@ -10,7 +10,6 @@ import com.example.library2.coroutines_channels.CoroutinesChannelActivity
 import com.example.library2.designpatterns.DesignPatternsActivity
 import com.example.library2.googlelibraries.RecaptchaGoogleActivity
 import com.example.library2.googlelibraries.SafetyNetRecaptchaActivity
-import com.example.library2.lifecycleawarecomp.LifeCycleAwareCompActivity
 import com.example.library2.oop.OOPActivity
 import com.example.library2.views.ViewsActivity
 
@@ -25,7 +24,6 @@ class MainActivity : AppCompatActivity() {
 //            "Compose" to ComposeActivity::class.java,
             "Design Patterns" to DesignPatternsActivity::class.java,
             "OOP" to OOPActivity::class.java,
-            "Livedata vs stateflow" to LifeCycleAwareCompActivity::class.java,
             "Channels in coroutinse" to CoroutinesChannelActivity::class.java,
             "Channels" to ChannelsActivity::class.java,
             "Google Libraries" to SafetyNetRecaptchaActivity::class.java,

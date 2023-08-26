@@ -54,7 +54,7 @@
             android:name=".coroutines_channels.CoroutinesChannelActivity"
             android:exported="false" />
         <activity
-            android:name=".lifecycleawarecomp.LifeCycleAwareCompActivity"
+            android:name=".coroutines_flows.nerds.LiveDataVsStateFlowActivity"
             android:exported="false" />
         <activity
             android:name=".concurrentprogramming.coroutines.nerds.DeferredActivity"

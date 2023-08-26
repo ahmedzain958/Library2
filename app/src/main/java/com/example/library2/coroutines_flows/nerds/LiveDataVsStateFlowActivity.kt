@@ -1,4 +1,4 @@
-package com.example.library2.lifecycleawarecomp
+package com.example.library2.coroutines_flows.nerds
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +9,7 @@ import androidx.lifecycle.lifecycleScope
 import com.example.library2.R
 import kotlinx.coroutines.launch
 
-class LifeCycleAwareCompActivity : AppCompatActivity() {
+class LiveDataVsStateFlowActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_livedata_vs_stateflow)
@@ -22,7 +22,7 @@ class LifeCycleAwareCompActivity : AppCompatActivity() {
 
 
         viewModel.startTimer()
-        viewModel.timerLiveData.observe(this@LifeCycleAwareCompActivity) {
+        viewModel.timerLiveData.observe(this@LiveDataVsStateFlowActivity) {
             Log.d("here", stringBuilder.toString())
             textView.text = textView.text.toString() + it.toString()
         }
