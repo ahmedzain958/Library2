@@ -2,6 +2,7 @@ package com.example.library2
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.library2.architectures.ArchitecturesActivity
 import com.example.library2.common.CommonList
 //import com.example.library2.compose.ComposeActivity
 import com.example.library2.concurrentprogramming.ConcurrentProgrammingActivity
@@ -28,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             "Channels" to ChannelsActivity::class.java,
             "Google Libraries" to SafetyNetRecaptchaActivity::class.java,
             "Recaptcha Google Libraries" to RecaptchaGoogleActivity::class.java,
+            "Architectures" to ArchitecturesActivity::class.java,
         )
 
         val commonList = findViewById<CommonList>(R.id.commonList)

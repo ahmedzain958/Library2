@@ -26,12 +26,14 @@ class ChannelsActivity : AppCompatActivity() {
                 send(Language.ENGLISH)
             }
 
-            listenToReceiveChannelProducerClosesChannelAutomatically(
-                channelTobeListenedAndClosedAutomatically
-            )
+            listenToReceiveChannelProducerClosesChannelAutomatically()
             //-----------------------------------------------------------------------------------------//
 
             bufferChannel = produce(capacity = 2) {
+                Log.d(
+                    "bufferChannel",
+                    "Beginning"
+                )
                 send(Language.ARABIC)
                 Log.d(
                     "bufferChannel",
@@ -58,13 +60,10 @@ class ChannelsActivity : AppCompatActivity() {
         lifecycleScope.launch {
             Log.d("bufferChannel", ".receive() " + bufferChannel.receive().toString())
             delay(3000)
-            Log.d("bufferChannel", "----------------------")
             Log.d("bufferChannel", ".receive() " + bufferChannel.receive().toString())
             delay(3000)
-            Log.d("bufferChannel", "----------------------")
             Log.d("bufferChannel", ".receive() " + bufferChannel.receive().toString())
             delay(3000)
-            Log.d("bufferChannel", "----------------------")
             Log.d("bufferChannel", ".receive() " + bufferChannel.receive().toString())
             delay(3000)
             Log.d("bufferChannel", "----------------------")
@@ -98,9 +97,7 @@ class ChannelsActivity : AppCompatActivity() {
 
     }
 
-    private suspend fun listenToReceiveChannelProducerClosesChannelAutomatically(
-        channelTobeListenedAndClosedAutomatically: ReceiveChannel<Language>
-    ) {
+    private suspend fun listenToReceiveChannelProducerClosesChannelAutomatically() {
         Log.d(
             "CoroutinesChannel",
             "ReceiveChannel = - isClosed= " + channelTobeListenedAndClosedAutomatically
