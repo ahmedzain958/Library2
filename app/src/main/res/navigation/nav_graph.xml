@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="com.example.library2.cleanarchitecture.ytprieyudha.FirstFragment"
+        android:name="com.example.library2.cleanarchitecture_cleancode.ytprieyudha.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
@@ -18,7 +18,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="com.example.library2.cleanarchitecture.ytprieyudha.SecondFragment"
+        android:name="com.example.library2.cleanarchitecture_cleancode.ytprieyudha.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 

@@ -1,4 +1,4 @@
-package com.example.library2.cleanarchitecture.ytprieyudha
+package com.example.library2.cleanarchitecture_cleancode.ytprieyudha
 
 import android.os.Bundle
 import android.util.Log
@@ -6,7 +6,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.library2.R
 import com.example.library2.databinding.FragmentFirstBinding

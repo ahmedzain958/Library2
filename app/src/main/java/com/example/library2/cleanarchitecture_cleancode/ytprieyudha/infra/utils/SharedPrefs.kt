@@ -1,4 +1,4 @@
-package com.example.library2.cleanarchitecture.ytprieyudha.infra.utils
+package com.example.library2.cleanarchitecture_cleancode.ytprieyudha.infra.utils
 
 import android.content.Context
 import android.content.SharedPreferences

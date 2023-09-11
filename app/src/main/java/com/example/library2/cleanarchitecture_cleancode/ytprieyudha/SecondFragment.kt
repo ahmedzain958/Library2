@@ -1,4 +1,4 @@
-package com.example.library2.cleanarchitecture.ytprieyudha
+package com.example.library2.cleanarchitecture_cleancode.ytprieyudha
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
