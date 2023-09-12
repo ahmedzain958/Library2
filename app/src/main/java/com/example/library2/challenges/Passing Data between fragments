@@ -1,0 +1,7 @@
+fragments represent a portion of UI in an activity, you can think of fragment as a modular section of an activity, has its own lifecycle, receives its own input events
+which you can add or remove while the activity is running (subactiviy you can use accross differnt activities)
+
+
+- Fragments should be modular
+- Fragments should not be aware of each other
+- Fragments should not launch other Fragments: if a click event happens in f1, it shouldn't trigger fragment 2 directly, it should communicate  the event to activity
