@@ -1,6 +1,5 @@
-package com.example.library2.errors.memoryconsistencyerror
+package com.example.library2.exceptions_notes_errors.memoryconsistencyerror
 
-import com.example.library2.errors.memoryconsistencyerror.MemoryConsistencyError
 import kotlin.jvm.JvmStatic
 
 /**

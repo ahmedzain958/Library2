@@ -1,0 +1,100 @@
+What Is a Pull Request?
+Pull requests are a GitHub and Bitbucket-specific feature that offers an easy,
+ web-based way to submit your work, alternately called “patches,” to the project.
+The name “pull request” comes from the idea that you’re requesting the project to “pull” changes from your fork
+
+You initiate a pull request when you’re ready to begin merging new changes in the code to the project’s main repository.
+ You’re informing the rest of the project team about your intentions. This request allows the team to discuss and review the suggested
+  changes, perhaps even adding follow-up commits, before the changes are merged with the base branch.
+
+The Git pull command is a combination of Git merge and Git fetch, meaning that the source code will get downloaded,
+  and if this code’s reference is indicated, all changes will be combined.
+
+Let’s take an aside and explain Git fetch. Git fetch downloads new data from a user’s remote repository.
+However, this data isn’t combined with the working files.
+Git fetch is a great way to get an up-to-date view of everything that’s happened on a remote repository but doesn’t change anything.
+  That’s why you can (and should) run a Git fetch frequently.
+
+
+  What Is a Merge Request?
+  A merge request is simply a request from a user to merge their code from one branch to another,
+  typically to the master branch. Like the Git pull request, the Git merge request allows the team members to discuss
+  the suggested changes and merges, offering feedback and possibly adding new commits to make the process smoother.
+
+  Git merge requests (MR) are the foundation of the GitLab version control platform.
+  They are called merge requests because their final action is merging the branch with the main feature branch.
+
+  Git merge combines changes into one consistent tree, just one part of what Git pull does. Remember,
+  Git pull requests entail combining the changes into one tree and downloading the source code as well.
+
+  So, how does a Git pull request differ from a Git merge request?
+
+
+
+-------------------
+Pull Request vs. Merge Request: Definition, Differences, and More
+By John Terra
+Last updated on Aug 7, 202361788
+Pull Request vs. Merge Request: Definition, Differences, Benefits, and More
+Table of Contents
+What Is a Pull Request?What Is a Merge Request?The Difference Between a Pull Request vs. Merge RequestThe Benefits of Pull Requests and Merge RequestsThe Mechanisms Behind Pull Request vs. Merge Request View More
+Git is recognized as one of the most popular distributed version control systems available today and is a versatile resource that, among other things, promotes cooperation and collaboration. Users can do so much with Git, and there's a plethora of tools and options available. However, the sheer scope of possibilities sometimes gets overwhelming, especially when figuring out what each tool does.
+
+That's why we're here today. This article explores the Git pull request, and the Git merge request tools and what they are. We’ll look at GitHub pull requests, the mechanisms behind the requests, and a head-to-head pull request vs. merge request comparison.
+
+Granted, the terminology can get confusing. For instance, what’s the difference between a Git merge pull request and a Git merge branch? But hopefully, this article will eliminate any confusion and help you get the most out of your Git experience.
+
+Let’s start with some basic definitions.
+
+Basics to Advanced - Learn It All!
+Caltech PGP Full Stack DevelopmentEXPLORE PROGRAMBasics to Advanced - Learn It All!
+What Is a Pull Request?
+Pull requests are a GitHub and Bitbucket-specific feature that offers an easy, web-based way to submit your work, alternately called “patches,” to the project. The name “pull request” comes from the idea that you’re requesting the project to “pull” changes from your fork.
+
+You initiate a pull request when you’re ready to begin merging new changes in the code to the project’s main repository. You’re informing the rest of the project team about your intentions. This request allows the team to discuss and review the suggested changes, perhaps even adding follow-up commits, before the changes are merged with the base branch.
+
+The Git pull command is a combination of Git merge and Git fetch, meaning that the source code will get downloaded, and if this code’s reference is indicated, all changes will be combined.
+
+Let’s take an aside and explain Git fetch. Git fetch downloads new data from a user’s remote repository. However, this data isn’t combined with the working files. Git fetch is a great way to get an up-to-date view of everything that’s happened on a remote repository but doesn’t change anything. That’s why you can (and should) run a Git fetch frequently.
+
+Pull requests are also called merge requests, which leads us to explain Git pull requests vs. merge requests in more detail.
+
+What Is a Merge Request?
+A merge request is simply a request from a user to merge their code from one branch to another, typically to the master branch. Like the Git pull request, the Git merge request allows the team members to discuss the suggested changes and merges, offering feedback and possibly adding new commits to make the process smoother.
+
+Git merge requests (MR) are the foundation of the GitLab version control platform. They are called merge requests because their final action is merging the branch with the main feature branch.
+
+Git merge combines changes into one consistent tree, just one part of what Git pull does. Remember, Git pull requests entail combining the changes into one tree and downloading the source code as well.
+
+So, how does a Git pull request differ from a Git merge request?
+
+Basics to Advanced - Learn It All!
+Caltech PGP Full Stack DevelopmentEXPLORE PROGRAMBasics to Advanced - Learn It All!
+The Difference Between a Pull Request vs. Merge Request
+A Git pull request is essentially the same as a Git merge request. Both requests achieve the same result: merging a developer’s branch with the project’s master or main branch. Their difference lies in which site they are used; GitHub uses the Git pull request, and GitLab uses the Git merge request.
+
+Both requests encourage collaboration among team members. Git pull and Git merge both ask the receivers to check out the suggested branch merge, and prompt them for feedback and possible commits. Consider it the web-based version of saying to a project team, "Hey guys, I've been working on this cool thing, and I want to add it to our collective work. Is everyone cool with this? If not, can you suggest any edits or tweaks? Otherwise, I plan to add my work now."
+
+So, both pull and merge requests gather changes from other branches or forks and merge the changes with the existing code.
+
+Remember that, in both cases, there’s a difference between the request and the command. For example, users initiate a pull request because they want to execute a Git pull command, and users submit a merge request when they want to run Git merge.
+
+Basics to Advanced - Learn It All!
+Caltech PGP Full Stack DevelopmentEXPLORE PROGRAMBasics to Advanced - Learn It All!
+The Benefits of Pull Requests and Merge Requests
+Not only are pull requests and merge requests similar, but they also both offer the same benefits to the Git developer team. Granted, users can just use a simple Git command to accomplish what a pull request or a merge request can do, and it makes sense that people would ask, “why bother?”
+
+However, both requests have benefits that can last throughout the project’s lifecycle.
+
+You get better access to resources that make the process easier: For example, the request includes a pointer to the main branch so you can distinguish and compare codes in your fix or feature branch. You also get the ability to merge feature and fix branches into your main branch. Requests also offer team members a chance to meet, discuss the fix or feature branch, and perform the pushes.
+Pushes facilitate communication between developers: Requests let you summarize software fixes and features into easily identifiable containers (e.g., GitHub). Also, it provides a convenient centralized place for developer team members to view changes and leave comments. Thus, rather than depending on e-mail, text messages, or other communication channels, everything resides in one self-contained tool, which reduces the chances of miscommunication. After all, while someone can forget to check their e-mail, it’s hard to overlook comments tacked on to the commits.
+You get a clear history of any changes: The team can see any changes present between the feature branch and the main branch. This advantage reduces the chance of error because team members can easily see what’s changed. Also, team discussions are recorded and saved based on chronological order.
+----------------------
+The Benefits of Pull Requests and Merge Requests
+Not only are pull requests and merge requests similar, but they also both offer the same benefits to the Git developer team. Granted, users can just use a simple Git command to accomplish what a pull request or a merge request can do, and it makes sense that people would ask, “why bother?”
+
+However, both requests have benefits that can last throughout the project’s lifecycle.
+
+You get better access to resources that make the process easier: For example, the request includes a pointer to the main branch so you can distinguish and compare codes in your fix or feature branch. You also get the ability to merge feature and fix branches into your main branch. Requests also offer team members a chance to meet, discuss the fix or feature branch, and perform the pushes.
+Pushes facilitate communication between developers: Requests let you summarize software fixes and features into easily identifiable containers (e.g., GitHub). Also, it provides a convenient centralized place for developer team members to view changes and leave comments. Thus, rather than depending on e-mail, text messages, or other communication channels, everything resides in one self-contained tool, which reduces the chances of miscommunication. After all, while someone can forget to check their e-mail, it’s hard to overlook comments tacked on to the commits.
+You get a clear history of any changes: The team can see any changes present between the feature branch and the main branch. This advantage reduces the chance of error because team members can easily see what’s changed. Also, team discussions are recorded and saved based on chronological order.

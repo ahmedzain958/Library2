@@ -1,9 +1,10 @@
 plugins {
     id 'com.android.application'
     id 'kotlin-android'
-    id 'kotlin-kapt'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-parcelize'
+    id 'com.google.devtools.ksp' version '1.8.10-1.0.9' apply false
+
 }
 
 android {
@@ -27,7 +28,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    kapt { generateStubs = true }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17
@@ -94,8 +94,8 @@ dependencies {
     // Room components
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
-    kapt "org.xerial:sqlite-jdbc:3.34.0"
-    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+//    kapt "org.xerial:sqlite-jdbc:3.34.0"
+//    ksp "androidx.room:room-compiler:$rootProject.roomVersion"
     androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
     implementation "androidx.activity:activity-ktx:1.4.0"/*this is for by viewModels<>*/
 
@@ -119,7 +119,7 @@ dependencies {
 
 //    implementation "com.google.dagger:hilt-android:$dagger_hilt_version"
 //    kapt "com.google.dagger:hilt-compiler:$dagger_hilt_version"
-    kapt 'androidx.hilt:hilt-compiler:1.0.0'
+//    kapt 'androidx.hilt:hilt-compiler:1.0.0'
 
 
 }
