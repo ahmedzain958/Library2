@@ -23,4 +23,7 @@
     <dimen name="tobi_animations_list_title_text_size">24dp</dimen>
     <dimen name="tobi_animations_list_type_text_size">16dp</dimen>
     <dimen name="descr_text_size">18sp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
 </resources>

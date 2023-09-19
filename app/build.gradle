@@ -84,29 +84,19 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.7.0'
 
     implementation 'com.google.android.recaptcha:recaptcha:18.2.1'
-/*    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.1'
-    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1'*/
+    implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
     testImplementation 'junit:junit:4.12'
-    testImplementation 'com.nhaarman.mockitokotlin2:mockito-kotlin:2.2.0'
-    testImplementation 'org.mockito:mockito-inline:2.23.0'
     testImplementation 'androidx.arch.core:core-testing:2.1.0'
     testImplementation 'androidx.test.ext:junit-ktx:1.1.1'
-    //our machines jvm can appropriately simulate an android operating system
     testImplementation 'org.robolectric:robolectric:4.3.1'
     testImplementation 'com.jraska.livedata:testing-ktx:1.1.0'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
     testImplementation "io.mockk:mockk:1.12.4"
     testImplementation "io.mockk:mockk-android:1.12.4"
-//    testImplementation "io.mockk:mockk-agent:1.12.4"
 
 
-    // Room components
-    implementation "androidx.room:room-runtime:$rootProject.roomVersion"
-    implementation "androidx.room:room-ktx:$rootProject.roomVersion"
-//    kapt "org.xerial:sqlite-jdbc:3.34.0"
-//    ksp "androidx.room:room-compiler:$rootProject.roomVersion"
-    androidTestImplementation "androidx.room:room-testing:$rootProject.roomVersion"
     implementation "androidx.activity:activity-ktx:1.4.0"/*this is for by viewModels<>*/
 
 // Coroutines
