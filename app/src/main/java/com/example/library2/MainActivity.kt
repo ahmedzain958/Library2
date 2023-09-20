@@ -30,6 +30,7 @@ class MainActivity : AppCompatActivity() {
             "Google Libraries" to SafetyNetRecaptchaActivity::class.java,
             "Recaptcha Google Libraries" to RecaptchaGoogleActivity::class.java,
             "Architectures" to ArchitecturesActivity::class.java,
+            "TestCallingRetrofitActivity" to TestCallingRetrofitActivity::class.java,
         )
 
         val commonList = findViewById<CommonList>(R.id.commonList)

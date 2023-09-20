@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".TestCallingRetrofitActivity"
+            android:exported="false" />
+        <activity
             android:name=".compose.interoperability.ComposeInteroperabilityMitchActivity"
             android:exported="false"
             android:label="@string/title_activity_compose_interoperability_mitch" />
