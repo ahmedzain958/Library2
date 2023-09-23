@@ -1,6 +1,6 @@
 package com.example.library2.compose.mitch_recipe.network
 
-import com.example.library2.compose.mitch_recipe.network.model.RecipeNetworkEntity
+import com.example.library2.compose.mitch_recipe.network.model.RecipeDTO
 import com.example.library2.compose.mitch_recipe.network.response.RecipeSearchResponse
 import retrofit2.http.GET
 import retrofit2.http.Header
@@ -20,7 +20,7 @@ interface RecipeService {
     suspend fun get(
         @Header("Authorization") token: String,
         @Query("id") id: Int
-    ): RecipeNetworkEntity
+    ): RecipeDTO
 }
 
 

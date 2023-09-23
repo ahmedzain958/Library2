@@ -31,7 +31,5 @@ class TestCallingRetrofitActivity : AppCompatActivity() {
                 Text(text = recipe.title.toString())
             }
         }
-
-
     }
 }

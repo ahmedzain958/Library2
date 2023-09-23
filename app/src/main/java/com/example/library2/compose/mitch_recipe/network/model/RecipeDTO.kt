@@ -2,7 +2,7 @@ package com.example.library2.compose.mitch_recipe.network.model
 
 import com.google.gson.annotations.SerializedName
 
-class RecipeNetworkEntity(
+data class RecipeDTO(
 
     @SerializedName("pk")
     var pk: Int? = null,

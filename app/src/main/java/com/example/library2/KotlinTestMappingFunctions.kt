@@ -1,12 +1,11 @@
 package com.example.library2
 
-import com.example.library2.compose.mitch_recipe.domain.util.EntityMapper
-import com.example.library2.compose.mitch_recipe.network.model.RecipeNetworkEntity
-import com.example.library2.compose.mitch_recipe.network.model.RecipeNetworkMapper
+import com.example.library2.compose.mitch_recipe.network.model.RecipeDTO
+import com.example.library2.compose.mitch_recipe.network.model.RecipeDTOMapper
 
 class KotlinTestMappingFunctions {
     fun testMapping() {
-        val recipe = RecipeNetworkMapper().mapFromEntity(RecipeNetworkEntity())
-        val entity = RecipeNetworkMapper().mapToEntity(recipe)
+        val recipe = RecipeDTOMapper().mapToDomainModel(RecipeDTO())
+        val entity = RecipeDTOMapper().mapFromDomainModel(recipe)
     }
 }
