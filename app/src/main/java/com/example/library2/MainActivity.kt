@@ -14,6 +14,7 @@ import com.example.library2.googlelibraries.RecaptchaGoogleActivity
 import com.example.library2.googlelibraries.SafetyNetRecaptchaActivity
 import com.example.library2.oop.OOPActivity
 import com.example.library2.views.ViewsActivity
+import dagger.hilt.EntryPoint
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

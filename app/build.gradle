@@ -4,7 +4,8 @@ plugins {
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-parcelize'
     id 'com.google.devtools.ksp' version '1.8.10-1.0.9' apply false
-
+    id 'com.google.dagger.hilt.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -63,14 +64,13 @@ android {
     namespace 'com.example.library2'
 
     composeOptions {
-       /* def kotlin_compiler_version = "1.4.0"
-        kotlinCompilerVersion kotlin_compiler_version*/
-
         def kotlin_compiler_extension_version = "1.5.3"
         kotlinCompilerExtensionVersion kotlin_compiler_extension_version
     }
 }
-
+kapt {
+    correctErrorTypes true
+}
 dependencies {
 
     implementation fileTree(dir: 'libs', include: ['*.jar'])
@@ -120,20 +120,16 @@ dependencies {
     implementation "androidx.multidex:multidex:$multidex_version"
 
     //compose
-    def androidx_ui = "1.0.0-alpha07"
-//    implementation "androidx.ui:ui-tooling:$androidx_ui"
-
-    def compose = "1.5.1"
     implementation("androidx.activity:activity-compose:1.7.2")
     implementation(platform("androidx.compose:compose-bom:2023.03.00"))
     implementation "androidx.compose.ui:ui"
     implementation("androidx.compose.ui:ui-graphics")
     implementation("androidx.compose.ui:ui-tooling-preview")
     implementation("androidx.compose.material3:material3")
-   /* implementation "androidx.compose.foundation:foundation:$compose"
-    implementation "androidx.compose.runtime:runtime-livedata:$compose"
-    implementation "androidx.compose.material3:material3:1.1.1"
-    implementation "androidx.compose.material3:material3-window-size-class:1.1.1"*/
     debugImplementation("androidx.compose.ui:ui-tooling")
     debugImplementation("androidx.compose.ui:ui-test-manifest")
+
+    //hilt
+    implementation "com.google.dagger:hilt-android:2.44.2"
+    kapt "com.google.dagger:hilt-compiler:2.44.2"
 }
