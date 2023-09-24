@@ -1,0 +1,26 @@
+
+ https://www.youtube.com/watch?v=Nu-4Q3OoR4E&list=PLTCrU9sGyburBw9wNOHebv9SjlE4Elv5a&index=5&ab_channel=sudoCODE
+
+Proxy: ex: when you don't talk to the broker directly and you tell your assistant(proxy) to talk instead
+
+Think about a machine that sits between the client and server (talks to the server on behalf of client)
+
+Forward Proxy: (can be seen as client-side proxy)
+ - disguises a client's IP
+ - used in institutions when multiple clients and all the traffic is controlled
+ and monitored through forward proxy, used in case of blocking the access to certain site
+ and used in case of caching the responses
+
+Reverse Proxy:(can be seen as server-side proxy) sits on server side and acts as a middle man for all the servers
+
+Client talks to the proxy and the proxy talks to all the servers and gets back all responses to the client,
+In this case there is anonymity of server, the client doesn't know about the ip addresses of any of the servers
+It only knows about the proxy
+
+- Scrubs all incoming traffic before it is sent to our backend
+- Caches response from servers
+- efficiently distributes the load for applications using mulitple servers
+- mitigates the perilous attacks, because actually your servers aren't exposed to the outer-world
+- provides single configuration point to manage SSL/TSL
+
+Important element for security, privacy and handling the traffic

@@ -1,0 +1,22 @@
+Data :
+- Business Layer
+- Application Layer
+- Data Stores (DBs) Layer
+- Network Layer
+- Hardware Layer
+
+
+
+
+
+Data Flow:
+- Texts/Videos/Images
+- JSON/XML
+- indexes/tables/lists
+- packets
+- Us
+
+
+Data stores: Databases - Queues - Caches - Indexes
+data flow methods : messages - APIs - Events
+methods allow data in different stores and the application to flow and get exchange wit these components

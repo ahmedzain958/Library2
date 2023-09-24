@@ -1,0 +1,16 @@
+Logical Entities:
+
+- Data: stays at the crux of all the systems and saved in databases
+- Application: How people some way interact/get data from the database
+
+- Communication Protocol: Lets think of database as a part of code that run on a machine and applicaton is a part of code that runs on another
+machine and they need to interact with each other and that happens through, makes communications between different
+machines possible (TCP/HTTP/ICP,..)
+Applications communicate with each other through requests in a form of APIs/RPC
+
+- Presentation layer: systems may/may not have presentation layers, but the systems that do (Mobile apps, web apps)
+    systems have no presentation layer like logging systems
+
+
+All these components that we discussed run on some instances that are available by some cloud providers, these instances together come under the infrastructure requirements of the system
+given by AWS, google cloud or azure
