@@ -1,4 +1,4 @@
-package com.example.library2.cleanarchitecture_cleancode.tight_coupling
+package com.example.library2.cleanarchitecture.cleanarchitecture_cleancode.tight_coupling
 /*
 Tight Coupling: if we wanted to switch to a different payment gateway, we would need to modify the paymentprocessor class,
  potentially causing ripple effects throughout the codebase

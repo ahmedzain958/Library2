@@ -1,0 +1,4 @@
+thin client: majority of the logic/manipulation/processing sets on the server side (netflix), less responsibilities on the client
+
+thick client: majority of the logic/manipulation/processing sets on the client side,
+less responsibilities on the server(M outlook, video editing Softwares)

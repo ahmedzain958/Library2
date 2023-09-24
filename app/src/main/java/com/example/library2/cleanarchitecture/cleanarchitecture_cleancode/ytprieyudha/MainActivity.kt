@@ -1,4 +1,4 @@
-package com.example.library2.cleanarchitecture_cleancode.ytprieyudha
+package com.example.library2.cleanarchitecture.cleanarchitecture_cleancode.ytprieyudha
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
