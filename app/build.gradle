@@ -1,11 +1,12 @@
 plugins {
     id 'com.android.application'
+    id("org.jetbrains.kotlin.android")
     id 'kotlin-android'
     id 'androidx.navigation.safeargs.kotlin'
     id 'kotlin-parcelize'
-    id 'com.google.devtools.ksp' version '1.8.10-1.0.9' apply false
-    id 'com.google.dagger.hilt.android'
+    id 'com.google.devtools.ksp' version '1.9.10-1.0.13' apply false
     id 'kotlin-kapt'
+    id 'com.google.dagger.hilt.android'
 }
 
 android {
@@ -130,6 +131,8 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
 
     //hilt
-    implementation "com.google.dagger:hilt-android:2.44.2"
-    kapt "com.google.dagger:hilt-compiler:2.44.2"
+    implementation "com.google.dagger:hilt-android:2.48"
+    kapt "com.google.dagger:hilt-compiler:2.48"
+//    sometimes this is used for mac m1
+//        kapt "org.xerial:sqlite-jdbc:3.36.0" // Only for computer with M1 CPU
 }
