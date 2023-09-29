@@ -1,0 +1,2 @@
+Hilt is compile time: you will get the error as a developer as opposed to
+Koin is runtime : a user not developer getting an error

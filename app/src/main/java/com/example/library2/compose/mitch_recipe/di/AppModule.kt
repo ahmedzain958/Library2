@@ -6,6 +6,9 @@ import dagger.hilt.components.SingletonComponent
 
 @Module
 @InstallIn(SingletonComponent::class)
+/**
+ * Our dependencies will exist as long as our application is alive
+ */
 object AppModule  {
 
 }

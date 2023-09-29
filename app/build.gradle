@@ -50,6 +50,7 @@ android {
     }
     configurations.all {
         resolutionStrategy.force 'com.google.code.findbugs:jsr305:3.0.1'
+        all*.exclude group: 'com.google.guava', module: 'listenablefuture'
     }
     buildFeatures {
         dataBinding true
@@ -87,6 +88,7 @@ dependencies {
     implementation 'com.google.android.recaptcha:recaptcha:18.2.1'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.6.2'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2'
+    implementation 'org.testng:testng:6.9.6'
     testImplementation 'junit:junit:4.12'
     testImplementation 'androidx.arch.core:core-testing:2.1.0'
     testImplementation 'androidx.test.ext:junit-ktx:1.1.1'

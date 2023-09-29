@@ -1,0 +1,10 @@
+Using static classes can have a number of disadvantages, including:
+
+Lack of encapsulation: Static classes cannot have instance-specific state, so they cannot be used to encapsulate behavior that depends on the state of a specific instance of the class.
+Limited inheritance: Because static classes cannot be inherited, they cannot be used to create a hierarchy of related classes.
+Testing difficulties: Because static classes cannot be instantiated, they cannot be easily tested using traditional methods, such as unit testing.
+No polymorphism: Static classes cannot be used in polymorphic scenarios, which can limit the flexibility and reuse of the code.
+Limited modularity: Because static classes cannot be encapsulated, they can make it more difficult to separate and organize code into modular components.
+Global state: Static classes often lead to global state, which can make it harder to reason about the behavior of the code and can make it more difficult to maintain and test.
+Thread safety: Static classes are not thread-safe, so they can lead to race conditions and other synchronization issues if they are accessed by multiple threads simultaneously.
+Not maintainable : If a class is designed only as static class, it can not be extended in the future, which makes it hard to maintain the codebase.

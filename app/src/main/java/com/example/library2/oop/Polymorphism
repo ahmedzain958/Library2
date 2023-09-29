@@ -1,0 +1,6 @@
+hy use Polymorphism in Java?
+There are a plethora of reasons to use polymorphism in Java. Some of them are mentioned below:
+
+Code Reusability: Polymorphism allows for the creation of objects of different classes to be treated in a uniform manner, which promotes code reusability and also modularity.
+By programming to a common interface or superclass, you can write a generic code that can work with multiple different objects.
+

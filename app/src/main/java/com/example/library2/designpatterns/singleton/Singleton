@@ -1,0 +1,16 @@
+- Only one instance of a certain class throughout the application or domain
+- Only a single point of access for a resource (database access, network manager, logging, utility class)
+
+
+https://www.youtube.com/watch?v=a83yC0JPixI&ab_channel=MobileDevSchool
+ex:
+ If we have multiple components and they need network communication to access network
+
+ component 1 ------------------> network communication instance 1 -----------> network
+ component 2 ------------------> network communication instance 2 -----------> network
+ component 3 ------------------> network communication instance 3 -----------> network
+
+Disadvantages of this approach:
+these network communication instances communicate in different ways or you might have delays or you might order your communication in some way
+so Ideally we need to create one instance and apply all our configurations on this instance like logging, ordering and all requests go through it
+there is something that you could do with a single one that you couldn't do with multiple
