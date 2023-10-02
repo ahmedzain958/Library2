@@ -1,0 +1,251 @@
+DI: represents the concept of providing instances needed by a class as a dependency, instead of having it constructing it itself
+
+Dependencies are other classes that a certain class depends on.
+
+For example, an ExampleViewModel class could contain a repository variable of type Repository:
+
+class ExampleViewModel {
+    private val repository: Repository = Repository()
+    fun doSomething() {
+        repository.use()
+    }
+}
+
+That's why ExampleViewModel depends on Repository, or Repository is a dependency for ExampleViewModel. Most of the time, classes have many more dependencies,
+ but we'll stick with only one for the sake of simplicity. In this case, the ExampleViewModel provides its own dependencies so it's very easy to create an instance of it:
+
+fun main() {
+
+    val vm = ExampleViewModel()
+
+    vm.doSomething()
+
+}
+
+Now, the previous example doesn't incorporate DI, mainly because ExampleViewModel provides instances for its own dependencies.
+It does that by instantiating a Repository instance (through the Repository() constructor) and by passing it to the repository variable.
+
+To incorporate DI, we must create a component that provides ExampleViewModel with its dependencies:
+
+object DependencyContainer {
+
+    val repo: Repository = Repository()
+
+}
+
+The DependencyContainer class will act, as the name suggests, as a dependency container, as it will provide instances for all the dependencies our classes need.
+ When a class needs an instance for its dependency, this container will provide it. This way, we centralize the creation of the instances of dependencies so we can handle this
+ process (which can become elaborate for complex projects where each dependency has other dependencies, for example) within a single place in our project.
+
+
+
+
+
+
+ NOTE
+
+ Apart from the DI technique, you can also use the service locator pattern to construct classes. Unlike DI, if you try to follow the service locator pattern, then the class that needs to be constructed will be responsible for creating its own dependencies with the help of a ServiceLocator component. Both DI and the service locator pattern are useful; however, we will only cover DI in this chapter.
+
+ Getting back to incorporating DI, we then must allow DependencyContainer to provide a Repository instance to ExampleViewModel:
+
+ class ExampleViewModel {
+
+     private val repository: Repository =
+
+         DependencyContainer.repo
+
+     fun doSomething() {
+
+         repository.use()
+
+     }
+
+ }
+
+ This technique of having dependencies declared as variables (for example, ExampleViewModel contains a repository variable) and then providing their instances through a container is a form of DI called field injection.
+
+ There are several issues with this approach, mainly caused by the fact that we have declared dependencies as field variables.
+  The most notable ones are as follows:
+
+ The ExampleViewModel class is tightly coupled to our DependencyContainer and we cannot use the ViewModel without it.
+ The dependencies are implicit, which means they are hidden from the outside world. In other words, whoever is instantiating ExampleViewModel doesn't know about the ViewModel
+ class's dependencies or their creation.
+ This won't allow us to reuse the same ExampleViewModel with other implementations of its dependencies (given its dependencies, such as Repository, are interfaces that can be implemented by different classes).
+
+ Since ExampleViewModel has hidden dependencies, it becomes hard for us to test it. As we will instantiate the ExampleViewModel and put it under test,
+  it will create its own Repository instance that will probably make real I/O requests for every test. We want our tests to be fast and reliable and not dependent on real third-party APIs.
+ To alleviate these issues, we must first refactor ExampleViewModel to expose its dependencies through its public API to the outside world.
+ The most appropriate way to do that is through its public constructor:
+
+ class ExampleViewModel constructor(private val repo: Repository) {
+
+     fun doSomething() { repo.use() }
+
+ }
+
+ Now, ExampleViewModel exposes its dependencies to the outside world through its constructor, making those dependencies explicit.
+ Yet, who's going to provide the dependencies from outside?
+
+ When we need to instantiate ExampleViewModel, DependencyContainer will provide it with the necessary dependencies from the outside:
+
+ fun main() {
+
+     val repoDependency = DependencyContainer.repository
+
+     val vm = ExampleViewModel(repoDependency)
+
+     vm.doSomething()
+
+ }
+
+ In the previous example, instead of field injection, we have used constructor injection.
+  This is because we have provided and injected the dependencies to ExampleViewModel from the outside world through its constructor.
+
+ As opposed to field injection, constructor injection allows us to do the following:
+
+ Decouple our classes from the DI container, just like ExampleViewModel no longer depends on DependencyContainer.
+ The dependencies are exposed to the outside world, so we can reuse the same ExampleViewModel with other implementations of Repository (given Repository is an interface).
+ The ExampleViewModel class can no longer decide which dependency implementation to get and use as was the case with field injection,
+ so we have now inverted this responsibility from ExampleViewModel to the outside world.
+ ExampleViewModel is easier to test, as we can easily pass a mock or a fake Repository implementation (given Repository is an interface) that will behave the way we're expecting it to in a test.
+ So far, with the help of a dependency container, we have incorporated DI by ourselves by allowing DependencyContainer to provide instances of dependencies to our classes
+  (that is, an instance of ExampleViewModel). This technique is called manual DI.
+
+ Apart from manual DI, you can have DI done automatically through frameworks that relieve you from the burden of the following:
+
+ Providing instances of dependencies to the classes that need them. More specifically, frameworks help you wire up complex object relationships for the required dependencies,
+  so you don't have to write boilerplate code to generate instances and pass them to appropriate objects. This infrastructure code is often cumbersome for large-sized apps,
+  so a framework that automates that for you can be quite handy.
+ Scoping dependencies to certain lifetime scopes, such as the Application scope or Activity scope. For example, if you want a certain dependency to be a singleton
+ (to be scoped to the lifetime of the application), you must manually make sure that only one instance is created in memory while also avoiding concurrency issues due to concurrent access.
+ A framework can do that for you behind the scenes.
+ In Android, a very simple DI library is Hilt, and we will explore it in the Implementing DI with Hilt section. But until then, let's better understand why DI is needed in the first place.
+
+ Why is DI needed?
+ DI is not a must for all projects. Until now, our Restaurants app worked just fine without any DI incorporated. Yet, while not including DI might not seem like a big issue,
+  by incorporating it you bring a lot of benefits to your project; the most notable advantages are that you can do the following:
+
+ Write less boilerplate code.
+ Write testable classes.
+ Let's cover these two next.
+
+ Write less boilerplate code
+ Let's circle back to our Restaurants app, and let's have a look at how we instantiate the Retrofit interface within the RestaurantsRepository class:
+
+ class RestaurantsRepository {
+
+     private var restInterface: RestaurantsApiService =
+
+         Retrofit.Builder()
+
+              .addConverterFactory(
+
+                  GsonConverterFactory.create())
+
+              .baseUrl("your_firebase_database_url")
+
+             .build()
+
+             .create(RestaurantsApiService::class.java)
+
+     [...]
+
+ }
+
+ Now, let's have a look at how we similarly instantiate the Retrofit interface within the RestaurantsDetailsViewModel class:
+
+ class RestaurantDetailsViewModel(…): ViewModel() {
+
+     private var restInterface: RestaurantsApiService
+
+     [...]
+
+     init {
+
+         val retrofit: Retrofit = Retrofit.Builder()
+
+             .addConverterFactory(GsonConverterFactory.create())
+
+             .baseUrl("your_firebase_database_url")
+
+             .build()
+
+         restInterface = retrofit
+
+             .create(RestaurantsApiService::class.java)
+
+         [...]
+
+     }
+
+     [...]
+
+ }
+
+ While the code seems different, in essence, it's the same code needed to instantiate a concrete instance of RestaurantsApiService. Unfortunately, we have duplicated this instantiation code in two places, both in the RestaurantsRepository class and in the RestaurantsDetailsViewModel class.
+
+ In medium to large-sized production apps, the relationship between objects is often much more complex, making such infrastructure code plague every class,
+ mostly because, without any DI, every class builds the instances of the dependencies it needs. Such code is often duplicated throughout the project and ultimately becomes difficult to manage.
+
+ DI will help us centralize this infrastructure code and will eliminate all the duplicated code needed to provide instances of dependencies, wherever we need them throughout the project.
+
+ Going back to our Restaurants app, if we were to use manual DI, all this instantiation code could be extracted into a DependencyContainer class that would provide us with a
+ RestaurantsApiService instance wherever we need it, so we would have no more duplicated code! Don't worry, we will incorporate DI soon, in the upcoming Implementing DI with Hilt section.
+
+ Now that we touched upon how DI helps us with containing and organizing the code related to building instances of classes, it's time to check out another essential advantage of DI.
+
+ Write testable classes
+ Let's suppose that we want to test the behavior of RestaurantsRepository to make sure that it performs as expected. But first, let's have a quick look at the existing implementation
+ of RestaurantsRepository:
+
+ class RestaurantsRepository {
+
+     private var restInterface: RestaurantsApiService =
+
+         Retrofit.Builder()
+
+             .[...]
+
+             .create(RestaurantsApiService::class.java)
+
+     private var restaurantsDao = RestaurantsDb
+
+         .getDaoInstance(
+
+             RestaurantsApplication.getAppContext()
+
+         )
+
+     suspend fun toggleFavoriteRestaurant(…) = {…}
+
+     suspend fun getRestaurants(): List<Restaurant> {…}
+
+     [...]
+
+ }
+
+ We can see that no DI is currently incorporated, as RestaurantsRepository has two implicit dependencies: an instance of RestaurantsApiService and an instance of RestaurantsDao.
+  The RestaurantsRepository provides instances to its own dependencies,
+ first by constructing a Retrofit.Builder() object and creating the concrete instance by calling .create(…).
+
+ Now, let's say we want to test this RestaurantsRepository class, and make sure that it behaves correctly by running different verifications.
+ Let's imagine how such a test class would look:
+
+ class RestaurantsRepositoryTest {
+
+     @Test
+
+     fun repository_worksCorrectly() {
+
+         val repo = RestaurantsRepository()
+
+         assertNotNull(repo)
+
+         // Perform other verifications
+
+     }
+
+ }
+
+ The previous test structure is simple: we created a RestaurantsRepository instance by using its constructor and then we saved it inside a repo variable.
+  We then asserted that the instance of the Repository is not null, so we can proceed with testing its behavior.

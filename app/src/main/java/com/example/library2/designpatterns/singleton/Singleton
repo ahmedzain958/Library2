@@ -14,3 +14,11 @@ Disadvantages of this approach:
 these network communication instances communicate in different ways or you might have delays or you might order your communication in some way
 so Ideally we need to create one instance and apply all our configurations on this instance like logging, ordering and all requests go through it
 there is something that you could do with a single one that you couldn't do with multiple
+
+
+solution
+
+component 1 ------------------> network communication instance  -----------> network
+ component 2 ------------------> network communication instance  -----------> network
+ component 3 ------------------> network communication instance  -----------> network
+ one instance singleton for all

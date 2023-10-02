@@ -1,0 +1,17 @@
+The Service Locator is a design pattern (some would argue antipattern) often used in software development to manage dependencies between objects.
+ It acts as a central registry where objects can locate and access their dependencies. However, it is considered an antipattern
+in certain contexts due to its negative impact on maintainability, testability, and the clarity of the code.
+
+
+
+Problems with the Service Locator
+Hidden dependencies: The Service Locator pattern can make dependencies between objects less clear, as they are not explicitly passed through constructors or setter methods.
+Testability issues: The use of a Service Locator can make unit testing more difficult, as it is harder to provide mock objects or isolate dependencies for testing.
+Inflexibility: The Service Locator pattern can make it challenging to change or replace dependencies, as they are managed centrally, rather than being passed as arguments.
+Because it is typically implemented using a static reference to the service locator, this pattern exhibits many of the same problems as the static cling antipattern.
+Alternatives
+Dependency Injection: An alternative to the Service Locator pattern is Dependency Injection (DI), where dependencies are explicitly provided to objects through constructors or setter methods.
+ DI makes dependencies more transparent, improving maintainability and testability.
+Factory Pattern: The Factory pattern is a creational design pattern that provides an interface for creating objects in a super class,
+allowing subclasses to determine which objects to create. This pattern can be used to manage dependencies by encapsulating the creation of dependent objects within specific factory classes.
+By doing so, you maintain separation of concerns and improve the modularity of the code.
