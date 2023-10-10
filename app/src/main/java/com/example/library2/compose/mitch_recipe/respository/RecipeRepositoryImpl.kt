@@ -4,6 +4,23 @@ import com.example.library2.compose.mitch_recipe.domain.model.Recipe
 import com.example.library2.compose.mitch_recipe.network.RecipeService
 import com.example.library2.compose.mitch_recipe.network.model.RecipeDTOMapper
 
+/**
+ * DI identical thing to
+ *     @Singleton
+ *     @Provides
+ *     fun provideRecipeRepository(
+ *         recipeService: RecipeService,
+ *         recipeDTOMapper: RecipeDTOMapper,
+ *     ): RecipeRepository {
+ *         return RecipeRepositoryImpl(recipeService, recipeDTOMapper)
+ *     }
+ * is
+ * @Singleton
+ * class RecipeRepositoryImpl @Inject constructor(
+ *     private val recipeService: RecipeService,
+ *     private val recipeDTOMapper: RecipeDTOMapper,
+ * ) : RecipeRepository {
+ */
 class RecipeRepositoryImpl(
     private val recipeService: RecipeService,
     private val recipeDTOMapper: RecipeDTOMapper,

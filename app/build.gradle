@@ -138,4 +138,8 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:2.48"
 //    sometimes this is used for mac m1
 //        kapt "org.xerial:sqlite-jdbc:3.36.0" // Only for computer with M1 CPU
+
+    def hilt_lifecycle_viewmodel = "1.0.0-alpha01"
+    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_lifecycle_viewmodel"
+    kapt "androidx.hilt:hilt-compiler:$hilt_lifecycle_viewmodel"
 }
